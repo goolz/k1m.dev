@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building a Modern Landing Page: A Complete Guide for Startup Founders</title>
+  <meta name="description"
+    content="Design once in Figma, deploy automatically to Cloudflare Pages, and update your site with a single click. No code required." />
+  <meta property="og:title" content="Building a Modern Landing Page: A Complete Guide for Startup Founders" />
+  <meta property="og:description"
+    content="Design once in Figma, deploy automatically to Cloudflare Pages, and update your site with a single click. No code required." />
+  <meta property="og:image" content="https://k1m.dev/images/How-to-Build-a-Modern-Landing-Page.png" />
+  <meta property="og:url" content="https://k1m.dev/blog/How-to-Build-a-Modern-Landing-Page" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MG24GTB4');</script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG24GTB4" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- Theme toggle -->
+  <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">
+    <span class="theme-icon sun">☀</span>
+    <span class="theme-icon moon">☽</span>
+  </button>
+
+  <!-- Article Hero -->
+  <section class="blog-hero">
+    <div class="blog-hero-bg"></div>
+    <div class="container blog-hero-inner">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a>
+        <span>/</span>
+        <span>Blog</span>
+        <span>/</span>
+        <span class="breadcrumb-current">Building a Modern Landing Page: A Complete Guide for Startup Founders</span>
+      </nav>
+      <h1 class="blog-title">Building a Modern Landing Page:<span class="gradient"> A Complete Guide for Startup
+          Founders</span></h1>
+      <p class="subtitle">Design once in Figma, deploy automatically to Cloudflare Pages, and update your site with a
+        single click. No code required.</p>
+      <div class="meta">
+        <span>👤 Keyvan Montazeri</span>
+        <span>⏱ 8 min read</span>
+        <span>📅 January 14, 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cover Image -->
+  <section class="cover-wrap">
+    <div class="container">
+      <div class="cover-wrap-inner">
+        <img src="https://k1m.dev/images/How-to-Build-a-Modern-Landing-Page.png"
+          alt="Building a Modern Landing Page Guide" />
+        <div class="cover-overlay"></div>
+      </div>
+    </div>
+  </section>
+
+  <article>
+    <div class="container-narrow">
+      <div class="prose blog-prose">
+        <h2>Why This Stack?</h2>
+        <p>As an early-stage founder, your landing page is often the first impression potential customers have of your
+          startup. This guide walks you through creating a professional, automatically-deployed landing page using
+          modern tools that require minimal technical expertise.</p>
+        <p>This approach combines visual design tools with automated deployment, giving you the best of both worlds:
+          complete creative control without needing to write code, and professional hosting infrastructure that scales
+          with your business. You'll be able to update your design and see changes live within minutes.</p>
+      </div>
+
+      <div class="callout callout-cost"><strong>Total Cost Breakdown:</strong> Domain (~$10-15/year) + Everything else =
+        $0. No monthly hosting fees, no build tool subscriptions, completely free deployment pipeline.</div>
+
+      <h2 class="section-title">The Modern Stack</h2>
+      <p class="prose">Here are the tools that power this workflow. Each one plays a specific role in getting you from
+        design to deployment:</p>
+      <div class="tool-card">
+        <div class="icon">☁</div>
+        <div>
+          <div class="name">Cloudflare Domains</div>
+          <div class="desc">Register your domain with competitive pricing and seamless integration with Cloudflare's
+            infrastructure.</div>
+          <div class="cost">$8-15/year</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="icon">🎨</div>
+        <div>
+          <div class="name">Figma + AI</div>
+          <div class="desc">Design your landing page visually, then use Figma AI to generate production-ready code
+            automatically.</div>
+          <div class="cost">Free</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="icon">🐙</div>
+        <div>
+          <div class="name">GitHub</div>
+          <div class="desc">Version control and code hosting that integrates directly with Figma and Cloudflare for
+            automatic deployments.</div>
+          <div class="cost">Free</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="icon">⚡</div>
+        <div>
+          <div class="name">Cloudflare Workers &amp; Pages</div>
+          <div class="desc">Edge computing platform that deploys your site globally with automatic SSL, CDN, and DDoS
+            protection.</div>
+          <div class="cost">Free</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip"><strong>The Magic Workflow:</strong> Design in Figma → Push to GitHub → Automatic
+        deployment to Cloudflare. Update your design anytime and it goes live in 1-2 minutes. No manual deployment steps
+        required.</div>
+
+      <h2 class="section-title">Complete Setup Guide</h2>
+
+      <div class="guide-step">
+        <div class="guide-step-head">
+          <div class="guide-step-num">1</div>
+          <h3>Secure Your Domain with Cloudflare</h3>
+        </div>
+        <div class="guide-step-body">
+          <p>Your domain is your digital identity. Cloudflare offers competitive pricing, robust security, and seamless
+            integration with their hosting platform.</p>
+          <p><strong>Getting Started:</strong></p>
+          <ul>
+            <li>Visit Cloudflare and create an account</li>
+            <li>Navigate to the Domain Registration section</li>
+            <li>Search for your desired domain name and check availability</li>
+            <li>Complete the purchase process (typically $8-15 per year)</li>
+          </ul>
+          <div class="callout callout-tip">Choose a domain that's memorable, reflects your brand, and isn't too long.
+            Consider .com first, but don't overlook .io, .ai, or industry-specific extensions if they fit your brand
+            better.</div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-head">
+          <div class="guide-step-num">2</div>
+          <h3>Design Your Landing Page in Figma</h3>
+        </div>
+        <div class="guide-step-body">
+          <p>Figma is a powerful, browser-based design tool that's become the industry standard. The platform now offers
+            AI-powered features that can generate production-ready code from your designs.</p>
+          <p><strong>Design Your Page:</strong></p>
+          <ul>
+            <li>Create a free account at Figma</li>
+            <li>Start a new design file (1440px width for desktop)</li>
+            <li>Include: hero section, value proposition, features, and call-to-action</li>
+            <li>Design for mobile responsiveness from the start</li>
+          </ul>
+          <div class="callout callout-info">Keep it simple and focused on one primary action. Use high-quality images,
+            consistent spacing, and ensure text is readable (16px minimum for body text).</div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-head">
+          <div class="guide-step-num">3</div>
+          <h3>Configure Wrangler for Deployment</h3>
+        </div>
+        <div class="guide-step-body">
+          <p>Wrangler is Cloudflare's command-line tool that manages deployment configurations. Ask Figma AI to include
+            this configuration when exporting your code.</p>
+          <div class="code-block">
+            <pre>{
+  "name": "your-project-name",
+  "compatibility_date": "2026-01-13",
+  "assets": {
+    "directory": "./dist"
+  }
+}</pre>
+          </div>
+          <p>Ensure Figma AI exports your code with a proper build process that outputs files to a <code
+              class="inline-code">dist</code> directory, which is where Cloudflare will look for your production-ready
+            files.</p>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-head">
+          <div class="guide-step-num">4</div>
+          <h3>Create Your GitHub Account</h3>
+        </div>
+        <div class="guide-step-body">
+          <p>GitHub will serve as your version control system and the bridge between your design tool and hosting
+            platform.</p>
+          <ul>
+            <li>Go to GitHub and sign up for a free account</li>
+            <li>Choose a professional username (may appear in URLs)</li>
+            <li>Verify your email address</li>
+            <li>Consider enabling two-factor authentication</li>
+          </ul>
+          <p>GitHub provides version history (so you can revert changes), serves as a backup of your code, and
+            integrates seamlessly with Cloudflare's deployment pipeline.</p>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-head">
+          <div class="guide-step-num">5</div>
+          <h3>Connect Figma to GitHub</h3>
+        </div>
+        <div class="guide-step-body">
+          <p>This integration enables automatic code synchronization from your design tool to your repository.</p>
+          <p><strong>Integration Steps:</strong></p>
+          <ul>
+            <li>In Figma, click the gear icon (Settings)</li>
+            <li>Navigate to the GitHub integration section</li>
+            <li>Authenticate with your GitHub account</li>
+            <li>Create a new repository (e.g., "company-landing-page")</li>
+            <li>Push your initial design (Settings → GitHub → Push)</li>
+          </ul>
+          <div class="callout callout-info">Once integrated, you can update your site by clicking: Settings → GitHub →
+            Push. Changes deploy automatically in 1-2 minutes.</div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-head">
+          <div class="guide-step-num">6</div>
+          <h3>Deploy with Cloudflare Workers &amp; Pages</h3>
+        </div>
+        <div class="guide-step-body">
+          <p>Cloudflare Pages provides fast, secure hosting with automatic deployments directly from your GitHub
+            repository.</p>
+          <p><strong>Deployment Configuration:</strong></p>
+          <ul>
+            <li>Log into Cloudflare → "Workers &amp; Pages"</li>
+            <li>Click "Create Application" → "Pages" → "Connect to Git"</li>
+            <li>Select your GitHub repository</li>
+            <li>Configure build settings:</li>
+          </ul>
+          <div class="code-block">
+            <pre>Build command: npm run build
+Deploy command: npx wrangler deploy
+Build output directory: dist</pre>
+          </div>
+          <p><strong>Connect Your Domain:</strong> In Custom Domains, add the domain you purchased. Cloudflare
+            automatically configures DNS and provisions SSL certificates.</p>
+          <div class="callout callout-tip">Your site is now live with HTTPS! Cloudflare's global CDN ensures fast
+            loading times worldwide.</div>
+        </div>
+      </div>
+
+      <div class="magic-box">
+        <h2>⚡ The Magic: Automatic Updates</h2>
+        <p>Here's where this workflow shines. Whenever you want to update your landing page:</p>
+        <ul class="step-list">
+          <li>Open your Figma design file</li>
+          <li>Make your changes (new headline, updated images, revised layout)</li>
+          <li>Click Settings → GitHub → Push</li>
+          <li>Cloudflare automatically detects the changes</li>
+          <li>Your site rebuilds and deploys in 1-2 minutes</li>
+          <li>Your live site reflects the new design</li>
+        </ul>
+        <p class="highlight">No manual deployment steps. No command line required. No downtime.</p>
+      </div>
+
+      <h2 class="section-title">Best Practices for Startup Founders</h2>
+      <div class="practice-card">
+        <h4>Iterate Based on Feedback</h4>
+        <p>Your first landing page doesn't need to be perfect. Launch quickly, gather feedback, and iterate. This
+          workflow makes updates painless, so take advantage of it.</p>
+      </div>
+      <div class="practice-card">
+        <h4>Monitor Performance</h4>
+        <p>Use Cloudflare's analytics to track visitor numbers, page load times, and geographic distribution. This data
+          informs future optimization decisions.</p>
+      </div>
+      <div class="practice-card">
+        <h4>Plan for Growth</h4>
+        <p>While you're starting with a landing page, this same workflow scales to multi-page websites. Design with a
+          consistent style system that can expand as your needs evolve.</p>
+      </div>
+
+      <h2 class="section-title">Common Troubleshooting</h2>
+      <details class="troubleshoot-item">
+        <summary class="troubleshoot-trigger">Build Failures <span class="arrow">▼</span></summary>
+        <p>If your deployment fails, check that your <code class="inline-code">wrangler.json</code> configuration
+          matches your actual directory structure and that your build command produces files in the specified output
+          directory.</p>
+      </details>
+      <details class="troubleshoot-item">
+        <summary class="troubleshoot-trigger">Domain Connection Issues <span class="arrow">▼</span></summary>
+        <p>DNS propagation can take a few hours. If your custom domain isn't working immediately, wait and check back.
+          Ensure your domain is registered through Cloudflare for the smoothest experience.</p>
+      </details>
+      <details class="troubleshoot-item">
+        <summary class="troubleshoot-trigger">Figma Export Problems <span class="arrow">▼</span></summary>
+        <p>Ensure Figma AI has generated all necessary files, including HTML, CSS, JavaScript, and configuration files.
+          Missing dependencies will cause deployment failures.</p>
+      </details>
+
+      <div class="cost-box">
+        <h2>Cost Breakdown</h2>
+        <p class="cost-box-intro">This stack is remarkably affordable for startups:</p>
+        <div class="cost-row"><span>Domain (Cloudflare)</span><span class="price">$8-15/year</span></div>
+        <div class="cost-row"><span>Figma (basic use)</span><span class="price">Free</span></div>
+        <div class="cost-row"><span>GitHub (unlimited repos)</span><span class="price">Free</span></div>
+        <div class="cost-row"><span>Cloudflare Pages</span><span class="price">Free</span></div>
+        <div class="total"><span>Total Monthly Cost</span><span class="price">$0</span></div>
+        <p class="note">For most early-stage startups, you'll operate entirely within free tiers except for the domain
+          registration.</p>
+      </div>
+
+      <div class="takeaways">
+        <h2 class="takeaways-title">Key Takeaways</h2>
+        <ul>
+          <li>
+            <div class="dot"></div><span>This modern workflow empowers founders to maintain professional web presence
+              without hiring developers.</span>
+          </li>
+          <li>
+            <div class="dot"></div><span>You control the design, the system handles the technical details, and updates
+              happen automatically.</span>
+          </li>
+          <li>
+            <div class="dot"></div><span>Start simple, launch quickly, and iterate based on real user feedback.</span>
+          </li>
+          <li>
+            <div class="dot"></div><span>Your landing page will evolve as your startup grows, and this flexible
+              infrastructure grows with you.</span>
+          </li>
+        </ul>
+      </div>
+
+      <section class="cta-section" id="contact">
+        <h2>Have an idea?<br />Let's build it.</h2>
+        <p>Whether you're starting from scratch or need help scaling, I'm here to turn your vision into reality.</p>
+        <div class="cta-links">
+          <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2cclRKHmtYrNM1Bjmx6U_1NdM7Ow1h8eRg4F9DLg6E2VSzvWWDCGBF71CuW7eNkIWF96tvRek9"
+            target="_blank" rel="noopener noreferrer" class="btn">Book a Call →</a>
+        </div>
+        <div class="contact-options">
+          <a href="mailto:hi@k1m.dev" class="contact-link">
+            <span class="contact-icon">✉</span>
+            <span>hi@k1m.dev</span>
+          </a>
+          <a href="https://linkedin.com/in/keyvan-montazeri" target="_blank" rel="noopener noreferrer"
+            class="contact-link">
+            <span class="contact-icon">in</span>
+            <span>LinkedIn Profile</span>
+          </a>
+        </div>
+      </section>
+
+      <div class="author-card">
+        <img src="https://k1m.dev/k1m.png" alt="Keyvan Montazeri" />
+        <div>
+          <div class="name">Keyvan Montazeri</div>
+          <div class="role">Startup MVP Engineer - Solutions Architect</div>
+          <p class="bio">18+ years building MVPs and solving hard tech problems for startups. I help founders move fast
+            and ship products that matter.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">k1m.dev</div>
+        <div class="footer-copy">Startup MVP Engineer</div>
+      </div>
+      <div class="footer-copy">© 2026 k1m.dev. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="../../script.js"></script>
+  <script>
+    // Theme toggle
+    (function () {
+      var btn = document.getElementById('theme-toggle');
+      var html = document.documentElement;
+      var saved = localStorage.getItem('theme');
+      var isDark = saved !== 'light';
+
+      function apply() {
+        if (isDark) {
+          html.classList.add('dark');
+          html.classList.remove('light');
+        } else {
+          html.classList.remove('dark');
+          html.classList.add('light');
+        }
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      }
+
+      if (saved === 'light') {
+        isDark = false;
+      }
+      apply();
+
+      if (btn) {
+        btn.addEventListener('click', function () {
+          isDark = !isDark;
+          apply();
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,3 @@
+name = "k1m-dev-worker"
+compatibility_date = "2026-03-10" # Use a recent compatibility date
+assets = { directory = "./public" }

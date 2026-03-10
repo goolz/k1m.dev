@@ -1,0 +1,24 @@
+{
+  "name": "k1m.dev",
+  "short_name": "k1m.dev",
+  "description": "Senior Tech Engineer — design, build, and scale MVPs using modern technologies, automation, and AI-driven solutions.",
+  "icons": [
+    {
+      "src": "/images/k1m.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/k1m.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#030712",
+  "background_color": "#030712",
+  "display": "standalone",
+  "start_url": "/",
+  "orientation": "any"
+}

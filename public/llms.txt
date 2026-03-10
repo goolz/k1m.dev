@@ -1,0 +1,71 @@
+# k1m.dev — Senior Tech Engineer & MVP Builder
+
+> Keyvan (K1) helps startups and companies design, build, and scale MVPs using modern technologies, automation, and AI-driven solutions that turn ideas into measurable business growth. 18+ years of experience; 50+ products built.
+
+## Site & Person
+
+- **Site**: https://k1m.dev
+- **Tagline**: Build Smarter. Launch Faster. Grow Revenue.
+- **Name**: Keyvan (K1)
+- **Role**: Senior Tech Engineer · Scalable Systems & MVPs
+- **Email**: hi@k1m.dev
+- **LinkedIn**: https://linkedin.com/in/keyvan-montazeri
+- **GitHub**: https://github.com/goolz
+
+## What He Does
+
+- **MVP Architecture & Development** — Turn ideas into working products fast; validate concepts and attract early users.
+- **Full-Stack & Cloud Engineering** — End-to-end from responsive frontends to scalable cloud infrastructure.
+- **API, SaaS & Integration Design** — Clean APIs, third-party integrations, SaaS architectures.
+- **Fixing, Scaling & Modernizing** — Technical debt, performance, legacy system modernization.
+
+## How He Works
+
+1. **Discovery & Idea Validation** — Understand vision, users, goals; validate assumptions and define MVP scope.
+2. **MVP Architecture & Planning** — Technical architecture, tech stack, roadmap balancing speed and quality.
+3. **Build, Iterate & Launch** — Rapid development, weekly check-ins, feedback loops until launch.
+4. **Scale & Optimize** — Post-launch scaling, performance optimization, growth-oriented features.
+
+## Skills & Expertise (Summary)
+
+- **AI & Modern**: GenAI, OpenAI/GPT, LLM fine-tuning, Hugging Face, AI workflow automation, AI telephony (Twilio GPT, RetellAI).
+- **Backend & Full Stack**: Node.js, Python, TypeScript, JavaScript, NestJS, Express, Next.js, React, Angular, React Native, Expo.
+- **API & Integration**: REST, Webhooks, event-driven, OAuth 2.0, WebSockets, RabbitMQ, Redis Pub/Sub, GraphQL.
+- **Cloud & Infra**: AWS (Lambda, ECS, EC2, S3, API Gateway, DynamoDB, RDS, etc.), Docker, Kubernetes, CI/CD, Terraform.
+- **Databases**: PostgreSQL, MongoDB, MySQL, MS SQL Server, DynamoDB, Redis.
+- **Architecture**: Microservices, distributed systems, multi-tenant SaaS, high availability, scalable design.
+- **Automation**: n8n, Zapier, Make.com, Activepieces, workflow orchestration.
+- **CRM / GTM**: HubSpot, Salesforce, Odoo, lead routing, sales/marketing automation, PLG.
+- **Data & Analytics**: SQL, GA4, Tableau, Power BI, Metabase, Mixpanel, Amplitude, funnel/revenue attribution.
+- **Other**: TDD, Jest, security/compliance, pre-sales/solution scoping, Agile, team mentoring.
+
+## Featured Projects
+
+- **TotsBuds.com** — Social platform for parents/caregivers; real-time, geolocation. React Native, Node.js, AWS, PostgreSQL, Redis. Role: MVP Builder & Lead Engineer.
+- **Crewa.app** — Running/fitness community; social features, events, gamification. React, Next.js, Serverless, DynamoDB, Stripe. Role: Full-Stack Engineer.
+- **Fintech Startup Platform** — Payment processing, financial management; compliance & security. TypeScript, Microservices, AWS Lambda, PostgreSQL. Role: Senior Architect.
+- **Property Management SaaS** — Tenant portals, maintenance, billing. React, Node.js, MongoDB, Docker, CI/CD. Role: MVP Builder.
+- **Dating App Startup** — AI matching, real-time chat, video. React Native, GraphQL, AWS, WebRTC, OpenAI. Role: Full-Stack Engineer.
+- **AI-Powered Analytics Tool** — BI with GenAI insights and predictive analytics. Next.js, Python, OpenAI, Vector DB, AWS. Role: Technical Lead.
+
+## Key Pages
+
+- **Home**: https://k1m.dev
+- **Blog (example)**: https://k1m.dev/blog/How-to-Build-a-Modern-Landing-Page/
+- **Growth Revenue**: https://k1m.dev/ai-revenue.html
+- **Book a Call**: Google Calendar appointments (link on site contact section)
+
+## Contact
+
+- **Email**: hi@k1m.dev
+- **Book a call**: Via link in contact section at https://k1m.dev/#contact
+- **LinkedIn**: https://linkedin.com/in/keyvan-montazeri
+
+## About (Summary)
+
+Keyvan is a senior tech engineer with 18+ years of experience and a founder mindset. He focuses on the 0→1 journey: turning ideas into products people use. Values: clarity, speed, real business outcomes; full-stack expertise, startup experience, modern stack (including AI), and clear communication.
+
+---
+
+*Last updated: March 2026*
+*For the most current information, visit https://k1m.dev*

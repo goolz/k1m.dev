@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://crewa.app/sitemap.xml
+
+# Disallow admin and private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all important pages
+Allow: /
+Allow: /about
+Allow: /features
+Allow: /how-it-works
+Allow: /blog
+Allow: /contact
+Allow: /faq
+Allow: /safety
+Allow: /guidelines
+Allow: /terms
+Allow: /privacy
+

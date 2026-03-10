@@ -1,0 +1,10 @@
+{
+    "name": "K1M.Dev",
+    "version": "1.0.0",
+    "description": "Landing page for K1M.Dev",
+    "scripts": {
+        "start": "npm run wrangler:dev",
+        "wrangler:dev": "npx wrangler pages dev public",
+        "deploy": "wrangler deploy"
+    }
+}
