@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Build an Interactive AI Agent Landing Page Using Static HTML, Figma, ChatGPT Agent, and Cursor AI</title>
+  <meta name="description"
+    content="Design and build an interactive AI agent landing page using static HTML, Figma, Cursor AI, and ChatGPT." />
+  <meta property="og:title" content="How to Build an Interactive AI Agent Landing Page Using Static HTML, Figma, ChatGPT Agent, and Cursor AI" />
+  <meta property="og:description"
+    content="Design and build an interactive AI agent landing page using static HTML, Figma, Cursor AI, and ChatGPT." />
+  <meta property="og:image" content="https://k1m.dev/images/How-to-Build-an-Interactive-AI-Agent-Landing-Page.png" />
+  <meta property="og:url" content="https://k1m.dev/blog/How-to-Build-an-Interactive-AI-Agent-Landing-Page" />
+  <link rel="stylesheet" href="../styles.css" />
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MG24GTB4');</script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG24GTB4" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <header class="site-header">
+    <a href="/" class="nav-logo"><img src="/favicon.svg" alt="k1m.dev" width="40" height="40" /></a>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav class="nav-top" id="nav-menu" aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/ai-revenue.html">Growth Revenue</a>
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">
+        <span class="theme-icon sun">☀</span>
+        <span class="theme-icon moon">☽</span>
+      </button>
+    </nav>
+    <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+  </header>
+
+  <!-- Article Hero -->
+  <section class="blog-hero">
+    <div class="blog-hero-bg"></div>
+    <div class="container blog-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href="/blog/">Blog</a>
+        <span>/</span>
+        <span class="breadcrumb-current">How to Build an Interactive AI Agent Landing Page</span>
+      </nav>
+      <h1 class="blog-title">How to Build an Interactive AI Agent Landing Page:<span class="gradient"> Static HTML, Figma, ChatGPT &amp; Cursor AI</span></h1>
+      <p class="subtitle">Design and build an interactive AI agent landing page using static HTML, Figma, Cursor AI, and ChatGPT.</p>
+      <div class="meta">
+        <span>👤 Keyvan Montazeri</span>
+        <span>⏱ 12 min read</span>
+        <span>📅 February 3, 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cover Image -->
+  <section class="cover-wrap">
+    <div class="container">
+      <div class="cover-wrap-inner">
+        <img src="https://k1m.dev/images/How-to-Build-an-Interactive-AI-Agent-Landing-Page.png"
+          alt="Interactive AI Agent Landing Page - Figma, Cursor, ChatGPT" />
+        <div class="cover-overlay"></div>
+      </div>
+    </div>
+  </section>
+
+  <article>
+    <div class="container-narrow">
+      <div class="prose blog-prose">
+        <p>Interactive AI landing pages are transforming how marketing websites engage visitors. Instead of static content and forms, users can interact with an AI agent that answers questions, explains products, and guides them toward conversion.</p>
+        <p>This article explains how to design and build an <strong>interactive AI agent landing page using static HTML</strong>, using <strong>Figma</strong>, <strong>Cursor</strong>, and <strong>ChatGPT</strong>.</p>
+        <p>This architecture is simple, fast, and ideal for marketing teams.</p>
+
+        <div class="callout callout-tip"><strong>Live demo:</strong> See this approach in action — <a href="https://crewa.app/toronto-run-concierge/" target="_blank" rel="noopener noreferrer">Toronto Run Concierge</a> is a free AI-powered running assistant with chat, live conditions, and personalized routes.</div>
+
+        <h2>Why Static HTML Is Ideal for Marketing Landing Pages</h2>
+        <p>Many companies unnecessarily build landing pages using heavy frameworks. In reality, most marketing pages need:</p>
+        <ul>
+          <li>fast loading</li>
+          <li>SEO optimization</li>
+          <li>simple hosting</li>
+          <li>easy iteration</li>
+        </ul>
+        <p>A <strong>static HTML architecture</strong> provides:</p>
+        <p><strong>Ultra-fast performance</strong><br />Pages can be served directly from CDN.</p>
+        <p><strong>Low hosting cost</strong><br />No complex backend infrastructure.</p>
+        <p><strong>Easy deployment</strong><br />You can deploy to Netlify, Vercel, or any CDN.</p>
+        <p><strong>Better SEO</strong><br />Search engines easily crawl static pages.</p>
+        <p>The AI logic can run through a <strong>lightweight API layer</strong>.</p>
+
+        <h2>Step 1 — Design the Experience in Figma</h2>
+        <p>Start by designing the landing page UI in <strong>Figma</strong>.</p>
+        <p>A typical AI landing page layout includes:</p>
+
+        <h3>Hero Section</h3>
+        <p>Headline:</p>
+        <blockquote>"Talk to our AI to see how our platform can help your team."</blockquote>
+        <p>Components:</p>
+        <ul>
+          <li>product value proposition</li>
+          <li>AI chat preview</li>
+          <li>call-to-action button</li>
+        </ul>
+
+        <h3>Interactive AI Chat Panel</h3>
+        <p>Instead of a traditional form, visitors see a <strong>chat interface</strong>.</p>
+        <p>Example UI:</p>
+        <div class="code-block">
+          <pre>Ask our AI about:
+• Pricing
+• Integrations
+• Product capabilities</pre>
+        </div>
+        <p>Chat input:</p>
+        <div class="code-block">
+          <pre>[ Ask anything about the product... ]</pre>
+        </div>
+        <p>This creates a <strong>conversation-based experience</strong> rather than a static page.</p>
+
+        <h3>Product Explanation Section</h3>
+        <p>Add sections explaining:</p>
+        <ul>
+          <li>product features</li>
+          <li>use cases</li>
+          <li>integrations</li>
+        </ul>
+        <p>The AI agent can reference these sections when responding.</p>
+
+        <h3>Conversion Section</h3>
+        <p>Examples:</p>
+        <ul>
+          <li>Book demo</li>
+          <li>Try product</li>
+          <li>Talk to sales</li>
+        </ul>
+        <p>The AI can guide users toward these actions.</p>
+
+        <h2>Step 2 — Generate the Static Landing Page with Cursor AI</h2>
+        <p>Next, use <strong>Cursor</strong> to convert the design into code.</p>
+        <p>Prompt example inside Cursor:</p>
+        <div class="code-block">
+          <pre>Generate a responsive landing page using:
+
+- static HTML
+- CSS
+- vanilla JavaScript
+
+Include:
+- hero section
+- product sections
+- AI chat interface
+- mobile responsive layout</pre>
+        </div>
+        <p>Cursor can generate something like this:</p>
+        <div class="code-block">
+          <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;AI Product Assistant&lt;/title&gt;
+&lt;style&gt;
+body {font-family: Arial; margin:0;}
+.hero {padding:80px; text-align:center;}
+.chatbox {position:fixed; bottom:20px; right:20px; width:320px;}
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;section class="hero"&gt;
+&lt;h1&gt;Talk to Our AI Product Assistant&lt;/h1&gt;
+&lt;p&gt;Ask questions and get instant answers.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;div class="chatbox"&gt;
+&lt;div id="messages"&gt;&lt;/div&gt;
+&lt;input id="input" placeholder="Ask about pricing or features..."&gt;
+&lt;button onclick="sendMessage()"&gt;Send&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;script src="chat.js"&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+        <p>This keeps the entire page <strong>static and lightweight</strong>.</p>
+
+        <h2>Step 3 — Add the AI Chat Agent</h2>
+        <p>Now connect the landing page to <strong>ChatGPT</strong>.</p>
+        <p>The front-end JavaScript will send user messages to a backend endpoint.</p>
+        <p>Example JavaScript:</p>
+        <div class="code-block">
+          <pre>async function sendMessage() {
+
+ const input = document.getElementById("input").value;
+
+ const response = await fetch("/api/chat", {
+   method: "POST",
+   headers: { "Content-Type": "application/json" },
+   body: JSON.stringify({ message: input })
+ });
+
+ const data = await response.json();
+
+ document.getElementById("messages").innerHTML +=
+   "&lt;p&gt;&lt;b&gt;AI:&lt;/b&gt; " + data.reply + "&lt;/p&gt;";
+}</pre>
+        </div>
+        <p>The backend calls the ChatGPT API and returns the response.</p>
+
+        <h2>Step 4 — Build the AI Agent Logic</h2>
+        <p>The AI agent should act like a <strong>product advisor</strong>.</p>
+        <p>Example system prompt:</p>
+        <div class="code-block">
+          <pre>You are an AI product assistant.
+
+Goals:
+- answer product questions
+- explain pricing
+- suggest demos
+- guide users to conversion</pre>
+        </div>
+        <p>Example conversation:</p>
+        <p>Visitor:</p>
+        <blockquote>Does this integrate with HubSpot?</blockquote>
+        <p>AI:</p>
+        <blockquote>Yes, we integrate with HubSpot and Salesforce. Would you like to see a quick demo?</blockquote>
+        <p>Buttons can appear:</p>
+        <div class="code-block">
+          <pre>[ Show Demo ]
+[ Book Call ]
+[ View Pricing ]</pre>
+        </div>
+        <p>This mimics a <strong>sales conversation</strong>.</p>
+
+        <h2>Step 5 — Track Visitor Behavior</h2>
+        <p>Marketing AI agents become powerful when connected to analytics.</p>
+        <p>Track events such as:</p>
+        <ul>
+          <li>page visits</li>
+          <li>pricing page views</li>
+          <li>time on page</li>
+          <li>scroll depth</li>
+          <li>chat interactions</li>
+        </ul>
+        <p>Example event:</p>
+        <div class="code-block">
+          <pre>User opened pricing section</pre>
+        </div>
+        <p>The AI can respond:</p>
+        <blockquote>I see you're interested in pricing. Would you like me to compare our plans?</blockquote>
+        <p>This creates <strong>contextual AI interactions</strong>.</p>
+
+        <h2>Step 6 — Capture Leads Automatically</h2>
+        <p>The AI agent can collect leads naturally during conversation.</p>
+        <p>Example interaction:</p>
+        <p>Visitor:</p>
+        <blockquote>Can you send me the pricing?</blockquote>
+        <p>AI:</p>
+        <blockquote>Sure — what email should I send it to?</blockquote>
+        <p>After email capture:</p>
+        <div class="code-block">
+          <pre>Send lead to CRM
+Trigger sales notification</pre>
+        </div>
+        <p>Typical integrations:</p>
+        <ul>
+          <li>CRM</li>
+          <li>marketing automation</li>
+          <li>email workflows</li>
+        </ul>
+
+        <h2>Step 7 — Add AI Personalization</h2>
+        <p>Advanced AI landing pages personalize responses using:</p>
+        <ul>
+          <li>visitor company domain</li>
+          <li>industry data</li>
+          <li>browsing behavior</li>
+        </ul>
+        <p>Example:</p>
+        <p>Visitor from a SaaS company.</p>
+        <p>AI response:</p>
+        <blockquote>Many SaaS teams use our platform to automate outbound sales workflows.</blockquote>
+        <p>This increases engagement and conversion.</p>
+
+        <h2>Example Architecture (Static)</h2>
+        <div class="code-block">
+          <pre>Figma Design
+      ↓
+Cursor AI Code Generation
+      ↓
+Static HTML Landing Page
+      ↓
+JavaScript Chat Widget
+      ↓
+API Endpoint
+      ↓
+ChatGPT Agent
+      ↓
+CRM + Analytics</pre>
+        </div>
+        <p>This architecture is <strong>simple, scalable, and ideal for marketing pages</strong>.</p>
+
+        <h2>Best Practices for AI Landing Pages</h2>
+        <p><strong>Keep AI responses short</strong><br />Visitors scan content quickly.</p>
+        <p><strong>Offer suggestion buttons</strong><br />Examples:</p>
+        <ul>
+          <li>Show demo</li>
+          <li>Compare plans</li>
+          <li>Book meeting</li>
+        </ul>
+        <p><strong>Use AI to qualify leads</strong><br />Ask questions like:</p>
+        <blockquote>What team are you part of?</blockquote>
+        <p><strong>Combine AI and CTAs</strong><br />The AI should guide users toward:</p>
+        <ul>
+          <li>demo booking</li>
+          <li>trial signup</li>
+          <li>contact sales</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>Interactive AI landing pages represent the future of marketing websites.</p>
+        <p>By combining:</p>
+        <ul>
+          <li><strong>Figma for design</strong></li>
+          <li><strong>Cursor AI for code generation</strong></li>
+          <li><strong>Static HTML for speed</strong></li>
+          <li><strong>ChatGPT agents for intelligent interaction</strong></li>
+        </ul>
+        <p>companies can create <strong>fast, personalized, and conversion-focused landing pages</strong>.</p>
+        <p>Instead of static content, visitors experience a <strong>conversation-driven website</strong>, turning your landing page into a <strong>24/7 AI sales assistant</strong>.</p>
+
+        <section class="cta-section" id="contact">
+          <h2>Have an idea?<br />Let's build it.</h2>
+          <p>Whether you're starting from scratch or need help scaling, I'm here to turn your vision into reality.</p>
+          <div class="cta-links">
+            <a href="https://meetings-na3.hubspot.com/keyvan?uuid=7f6105be-cff2-4f01-92b9-739ed12ff266" target="_blank"
+              rel="noopener noreferrer" class="btn" id="cta-button">Book a Call →</a>
+          </div>
+          <div class="contact-options">
+            <a href="mailto:hi@k1m.dev" class="contact-link">
+              <span class="contact-icon">✉</span>
+              <span>hi@k1m.dev</span>
+            </a>
+            <a href="https://linkedin.com/in/keyvan-montazeri" target="_blank" rel="noopener noreferrer"
+              class="contact-link">
+              <span class="contact-icon">in</span>
+              <span>LinkedIn Profile</span>
+            </a>
+          </div>
+        </section>
+
+        <div class="author-card">
+          <img src="https://k1m.dev/images/k1m.png" alt="Keyvan Montazeri" />
+          <div>
+            <div class="name">Keyvan Montazeri</div>
+            <div class="role">Startup MVP Engineer - Solutions Architect</div>
+            <p class="bio">18+ years building MVPs and solving hard tech problems for startups. I help founders move fast
+              and ship products that matter.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">k1m.dev</div>
+        <div class="footer-copy">Startup MVP Engineer</div>
+      </div>
+      <div class="footer-copy">© 2026 k1m.dev. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    // Theme toggle
+    (function () {
+      var btn = document.getElementById('theme-toggle');
+      var html = document.documentElement;
+      var saved = localStorage.getItem('theme');
+      var isDark = saved !== 'light';
+
+      function apply() {
+        if (isDark) {
+          html.classList.add('dark');
+          html.classList.remove('light');
+        } else {
+          html.classList.remove('dark');
+          html.classList.add('light');
+        }
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      }
+
+      if (saved === 'light') {
+        isDark = false;
+      }
+      apply();
+
+      if (btn) {
+        btn.addEventListener('click', function () {
+          isDark = !isDark;
+          apply();
+        });
+      }
+    })();
+  </script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na3.hs-scripts.com/342879697.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+
+</html>
