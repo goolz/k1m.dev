@@ -30,17 +30,23 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG24GTB4" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <!-- Theme toggle -->
-  <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">
-    <span class="theme-icon sun">☀</span>
-    <span class="theme-icon moon">☽</span>
-  </button>
-
-  <!-- Nav -->
-  <div class="nav-top">
-    <a href="blog/How-to-Build-a-Modern-Landing-Page/">View Blog Article</a>
-    <a href="ai-revenue.html" class="btn-nav-primary">Growth Revenue</a>
-  </div>
+  <header class="site-header">
+    <a href="/" class="nav-logo"><img src="/favicon.svg" alt="k1m.dev" width="40" height="40" /></a>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav class="nav-top" id="nav-menu" aria-label="Main">
+      <a href="/blog/">Blog</a>
+      <a href="/ai-revenue.html">Growth Revenue</a>
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">
+        <span class="theme-icon sun">☀</span>
+        <span class="theme-icon moon">☽</span>
+      </button>
+    </nav>
+    <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+  </header>
 
   <!-- Hero -->
   <section class="hero hero-full">
