@@ -51,7 +51,8 @@
 ## Key Pages
 
 - **Home**: https://k1m.dev
-- **Blog (example)**: https://k1m.dev/blog/How-to-Build-a-Modern-Landing-Page/
+- **Blog (recent)**: https://k1m.dev/blog/Does-Having-a-CMS-Make-Sense-Anymore-Now-That-We-Have-AI.html
+- **Blog (example)**: https://k1m.dev/blog/How-to-Build-a-Modern-Landing-Page.html
 - **Growth Revenue**: https://k1m.dev/ai-revenue.html
 - **Book a Call**: Google Calendar appointments (link on site contact section)
 

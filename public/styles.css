@@ -1106,6 +1106,38 @@ details[open] .accordion-trigger::after {
 }
 
 /* Blog index - article list */
+/* Home — latest articles (two-column grid) */
+.home-blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.home-blog-all {
+  text-align: center;
+  margin: 2rem 0 0;
+}
+
+.home-blog-all a {
+  color: #a78bfa;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.home-blog-all a:hover {
+  text-decoration: underline;
+}
+
+html.light .home-blog-all a {
+  color: #7c3aed;
+}
+
+@media (max-width: 900px) {
+  .home-blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .blog-list {
   display: flex;
   flex-direction: column;
@@ -1204,6 +1236,41 @@ details[open] .accordion-trigger::after {
   .blog-card-arrow {
     align-self: flex-end;
   }
+}
+
+/* Home — latest articles: image on top, full image visible (no crop), all breakpoints */
+.home-blog-grid .blog-card-link {
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+  gap: 0;
+}
+
+.home-blog-grid .blog-card-image {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  flex-shrink: 0;
+  border-radius: 0.75rem 0.75rem 0 0;
+  overflow: hidden;
+  background: #1f2937;
+}
+
+.home-blog-grid .blog-card-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  vertical-align: bottom;
+}
+
+.home-blog-grid .blog-card-content {
+  padding: 1.25rem 1.5rem 0.5rem;
+}
+
+.home-blog-grid .blog-card-arrow {
+  align-self: flex-end;
+  margin: 0 1.5rem 1.25rem;
 }
 
 html.light .blog-card {
