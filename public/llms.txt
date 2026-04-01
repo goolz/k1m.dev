@@ -1,4 +1,4 @@
-# k1m.dev — Senior Tech Engineer & MVP Builder
+# k1m.dev — Tech Engineer & MVP Builder
 
 > Keyvan (K1) helps startups and companies design, build, and scale MVPs using modern technologies, automation, and AI-driven solutions that turn ideas into measurable business growth. 18+ years of experience; 50+ products built.
 
@@ -7,7 +7,7 @@
 - **Site**: https://k1m.dev
 - **Tagline**: Build Smarter. Launch Faster. Grow Revenue.
 - **Name**: Keyvan (K1)
-- **Role**: Senior Tech Engineer · Scalable Systems & MVPs
+- **Role**: Tech Engineer · Scalable Systems & MVPs
 - **Email**: hi@k1m.dev
 - **LinkedIn**: https://linkedin.com/in/keyvan-montazeri
 - **GitHub**: https://github.com/goolz
@@ -41,8 +41,8 @@
 
 ## Featured Projects
 
-- **TotsBuds.com** — Social platform for parents/caregivers; real-time, geolocation. React Native, Node.js, AWS, PostgreSQL, Redis. Role: MVP Builder & Lead Engineer.
-- **Crewa.app** — Running/fitness community; social features, events, gamification. React, Next.js, Serverless, DynamoDB, Stripe. Role: Full-Stack Engineer.
+- **Crewa.app** (https://crewa.app) — Recent MVP. “Find Your Running Crew in Toronto”: ID-verified local runners, same pace/schedule, group runs of 2–5; Toronto-first, expanding. React, Next.js, Serverless, DynamoDB, Stripe. Role: Recent MVP · Full-Stack Engineer.
+- **TotsBuds.com** (https://totsbuds.com) — Recent MVP. Companion for children’s growth and learning; tools for educators and parents. No AI; no private data gathered for children; privacy-first. React Native, Node.js, AWS, PostgreSQL, Redis. Role: Recent MVP · MVP Builder & Lead Engineer.
 - **Fintech Startup Platform** — Payment processing, financial management; compliance & security. TypeScript, Microservices, AWS Lambda, PostgreSQL. Role: Senior Architect.
 - **Property Management SaaS** — Tenant portals, maintenance, billing. React, Node.js, MongoDB, Docker, CI/CD. Role: MVP Builder.
 - **Dating App Startup** — AI matching, real-time chat, video. React Native, GraphQL, AWS, WebRTC, OpenAI. Role: Full-Stack Engineer.
@@ -64,7 +64,7 @@
 
 ## About (Summary)
 
-Keyvan is a senior tech engineer with 18+ years of experience and a founder mindset. He focuses on the 0→1 journey: turning ideas into products people use. Values: clarity, speed, real business outcomes; full-stack expertise, startup experience, modern stack (including AI), and clear communication.
+Keyvan is a tech engineer with 18+ years of experience and a founder mindset. He focuses on the 0→1 journey: turning ideas into products people use. Values: clarity, speed, real business outcomes; full-stack expertise, startup experience, modern stack (including AI), and clear communication.
 
 ---
 

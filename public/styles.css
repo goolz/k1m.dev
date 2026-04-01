@@ -497,10 +497,105 @@ h1 .gradient {
   border: 1px solid #1f2937;
 }
 
+.project-card-media {
+  margin: 0 0 1rem;
+  display: block;
+  width: fit-content;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card-media:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 4px;
+  border-radius: 1.25rem;
+}
+
+.project-card-media img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1.125rem;
+  display: block;
+  object-fit: contain;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* Dashboard / screenshot previews (full width inside card) */
+.project-card-media.project-card-media--wide {
+  width: 100%;
+  max-width: 100%;
+}
+
+.project-card-media--wide img {
+  width: 100%;
+  height: auto;
+  max-height: 12rem;
+  border-radius: 0.5rem;
+  object-fit: contain;
+  object-position: top center;
+  background: rgba(31, 41, 55, 0.5);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+html.light .project-card-media--wide img {
+  background: #f3f4f6;
+}
+
+.project-card-site {
+  margin: 1rem 0 0;
+  font-size: 0.875rem;
+}
+
+.project-card-site a {
+  color: #a78bfa;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.project-card-site a:hover {
+  text-decoration: underline;
+}
+
+html.light .project-card-site a {
+  color: #7c3aed;
+}
+
+.project-card-site-apple {
+  color: #6b7280;
+  font-weight: 400;
+}
+
+html.light .project-card-site-apple {
+  color: #9ca3af;
+}
+
 .project-card h3 {
   font-size: 1.25rem;
   color: #fff;
   margin: 0 0 0.5rem;
+}
+
+.project-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-card h3 a:hover {
+  text-decoration: underline;
+}
+
+.project-card-lead {
+  font-weight: 600;
+  color: #e5e7eb;
+  line-height: 1.45;
+}
+
+.project-card-privacy {
+  font-size: 0.875rem;
+  color: #a7f3d0;
+  border-left: 3px solid rgba(16, 185, 129, 0.5);
+  padding-left: 0.75rem;
+  margin-top: 0.25rem;
 }
 
 .project-card p {
@@ -1950,6 +2045,20 @@ html.light body {
 html.light .subtitle,
 html.light .section-intro,
 html.light .service-card p,
+html.light .project-card h3,
+html.light .project-card h3 a {
+  color: #111827;
+}
+
+html.light .project-card-lead {
+  color: #374151;
+}
+
+html.light .project-card-privacy {
+  color: #047857;
+  border-left-color: rgba(16, 185, 129, 0.45);
+}
+
 html.light .project-card p,
 html.light .about-text p,
 html.light .cta-subtitle {

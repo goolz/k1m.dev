@@ -1,6 +1,6 @@
 # k1m.dev
 
-Landing page for **k1m.dev** — Senior Tech Engineer & MVP Builder. Static site served via Cloudflare Pages (Wrangler).
+Landing page for **k1m.dev** — Tech Engineer & MVP Builder. Static site served via Cloudflare Pages (Wrangler).
 
 **This project is for learning purposes.** Use it as a reference for structure, styling, or deployment; it is not intended for production reuse as-is.
 
