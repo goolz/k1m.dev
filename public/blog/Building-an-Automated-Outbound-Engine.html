@@ -60,8 +60,10 @@
         <span>/</span>
         <span class="breadcrumb-current">Building an Automated Outbound Engine: A GTM Engineering Case Study</span>
       </nav>
-      <h1 class="blog-title">Building an Automated Outbound Engine:<span class="gradient"> A GTM Engineering Case Study</span></h1>
-      <p class="subtitle">How I designed and built a fully automated outbound system using Clay, n8n, HubSpot, and Google Sheets.</p>
+      <h1 class="blog-title">Building an Automated Outbound Engine:<span class="gradient"> A GTM Engineering Case
+          Study</span></h1>
+      <p class="subtitle">How I designed and built a fully automated outbound system using Clay, n8n, HubSpot, and
+        Google Sheets.</p>
       <div class="meta">
         <span>👤 Keyvan Montazeri</span>
         <span>⏱ 10 min read</span>
@@ -74,7 +76,7 @@
   <section class="cover-wrap">
     <div class="container">
       <div class="cover-wrap-inner">
-        <img src="https://k1m.dev/images/Building-an-Automated-Outbound-Engine.png"
+        <img src="/images/Building-an-Automated-Outbound-Engine.png"
           alt="Automated Outbound Engine - GTM Engineering Case Study" />
         <div class="cover-overlay"></div>
       </div>
@@ -84,12 +86,18 @@
   <article>
     <div class="container-narrow">
       <div class="prose blog-prose">
-        <p>Modern B2B companies rely heavily on outbound marketing to generate pipeline. However, in many organizations, outbound processes are still <strong>highly manual</strong>, fragmented across multiple tools, and prone to human error.</p>
-        <p>This post walks through how I designed and built a <strong>fully automated outbound system</strong> using a modern GTM engineering stack. The system integrated lead sourcing, enrichment, CRM synchronization, automated outreach, and performance tracking into a single workflow.</p>
-        <p>The result was a <strong>scalable outbound engine</strong> that significantly reduced manual work and allowed the marketing team to focus on strategy rather than operations.</p>
+        <p>Modern B2B companies rely heavily on outbound marketing to generate pipeline. However, in many organizations,
+          outbound processes are still <strong>highly manual</strong>, fragmented across multiple tools, and prone to
+          human error.</p>
+        <p>This post walks through how I designed and built a <strong>fully automated outbound system</strong> using a
+          modern GTM engineering stack. The system integrated lead sourcing, enrichment, CRM synchronization, automated
+          outreach, and performance tracking into a single workflow.</p>
+        <p>The result was a <strong>scalable outbound engine</strong> that significantly reduced manual work and allowed
+          the marketing team to focus on strategy rather than operations.</p>
 
         <h2>The Problem: Manual Outbound Workflows</h2>
-        <p>In this project, the marketing team followed a manual process to run outbound campaigns. Their workflow included:</p>
+        <p>In this project, the marketing team followed a manual process to run outbound campaigns. Their workflow
+          included:</p>
         <ul>
           <li>Pulling leads manually from prospecting tools</li>
           <li>Enriching contact data across different platforms</li>
@@ -99,10 +107,14 @@
         </ul>
         <p>Because each step was handled separately, the process introduced several problems:</p>
         <p><strong>1. Time inefficiency</strong><br />The team spent hours moving data between tools.</p>
-        <p><strong>2. Data inconsistencies</strong><br />Manual enrichment and copying often led to errors or duplicate records.</p>
-        <p><strong>3. Missed follow-ups</strong><br />Without automation, leads sometimes slipped through the cracks.</p>
-        <p><strong>4. Limited visibility into performance</strong><br />Tracking metrics required constant spreadsheet updates.</p>
-        <p>The marketing team needed a system that could <strong>automate repetitive tasks while keeping the workflow flexible</strong>.</p>
+        <p><strong>2. Data inconsistencies</strong><br />Manual enrichment and copying often led to errors or duplicate
+          records.</p>
+        <p><strong>3. Missed follow-ups</strong><br />Without automation, leads sometimes slipped through the cracks.
+        </p>
+        <p><strong>4. Limited visibility into performance</strong><br />Tracking metrics required constant spreadsheet
+          updates.</p>
+        <p>The marketing team needed a system that could <strong>automate repetitive tasks while keeping the workflow
+            flexible</strong>.</p>
 
         <h2>The Solution: A GTM Automation Stack</h2>
         <p>To solve this, I designed an outbound automation pipeline using a modern GTM engineering stack:</p>
@@ -112,10 +124,12 @@
           <li><strong>HubSpot</strong> – CRM and email campaign automation</li>
           <li><strong>Google Sheets</strong> – Campaign analytics and reporting</li>
         </ul>
-        <p>This architecture enabled the entire outbound workflow to run <strong>automatically from lead discovery to outreach tracking</strong>.</p>
+        <p>This architecture enabled the entire outbound workflow to run <strong>automatically from lead discovery to
+            outreach tracking</strong>.</p>
 
         <h2>System Architecture</h2>
-        <p>The system was designed as a modular workflow where each component handled a specific stage of the outbound process.</p>
+        <p>The system was designed as a modular workflow where each component handled a specific stage of the outbound
+          process.</p>
 
         <h3>1. Lead Discovery with Clay</h3>
         <p>The pipeline begins with <strong>lead sourcing through Clay</strong>.</p>
@@ -136,7 +150,8 @@
         <p>This ensured that the system always started with <strong>high-quality lead data</strong>.</p>
 
         <h3>2. Data Processing with n8n</h3>
-        <p>After lead generation, the data flows into <strong>n8n</strong>, which acts as the orchestration layer of the entire system.</p>
+        <p>After lead generation, the data flows into <strong>n8n</strong>, which acts as the orchestration layer of the
+          entire system.</p>
         <p>The automation workflow performs several key functions:</p>
         <ul>
           <li>Validating email addresses</li>
@@ -144,11 +159,13 @@
           <li>Removing duplicate contacts</li>
           <li>Filtering leads based on qualification rules</li>
         </ul>
-        <p>Because n8n supports flexible workflows, it also allows easy integration with additional APIs or data sources.</p>
+        <p>Because n8n supports flexible workflows, it also allows easy integration with additional APIs or data
+          sources.</p>
         <p>This stage ensures that only <strong>clean, validated leads</strong> move forward in the pipeline.</p>
 
         <h3>3. CRM Synchronization with HubSpot</h3>
-        <p>Once the data passes validation, the workflow automatically synchronizes contacts with <strong>HubSpot</strong>.</p>
+        <p>Once the data passes validation, the workflow automatically synchronizes contacts with
+          <strong>HubSpot</strong>.</p>
         <p>The automation handles:</p>
         <ul>
           <li>Creating new contact records</li>
@@ -156,7 +173,8 @@
           <li>Assigning campaign tags</li>
           <li>Segmenting leads for outreach campaigns</li>
         </ul>
-        <p>With this system in place, the CRM remains <strong>continuously updated without manual data entry</strong>.</p>
+        <p>With this system in place, the CRM remains <strong>continuously updated without manual data entry</strong>.
+        </p>
 
         <h3>4. Automated Outreach Campaigns</h3>
         <p>After leads enter HubSpot, automated email sequences are triggered.</p>
@@ -167,10 +185,12 @@
           <li>Conditional emails based on engagement signals</li>
         </ul>
         <p>This guarantees that every lead receives <strong>consistent and timely communication</strong>.</p>
-        <p>Automation also ensures that follow-ups happen reliably, which is one of the most critical factors in successful outbound campaigns.</p>
+        <p>Automation also ensures that follow-ups happen reliably, which is one of the most critical factors in
+          successful outbound campaigns.</p>
 
         <h3>5. Performance Tracking with Google Sheets</h3>
-        <p>To give the marketing team real-time insights, the system logs key campaign metrics into <strong>Google Sheets</strong>.</p>
+        <p>To give the marketing team real-time insights, the system logs key campaign metrics into <strong>Google
+            Sheets</strong>.</p>
         <p>The automated reporting includes:</p>
         <ul>
           <li>Email send counts</li>
@@ -178,15 +198,19 @@
           <li>Reply rates</li>
           <li>Follow-up status</li>
         </ul>
-        <p>This provides a <strong>centralized dashboard for monitoring campaign performance and optimizing outreach strategies</strong>.</p>
+        <p>This provides a <strong>centralized dashboard for monitoring campaign performance and optimizing outreach
+            strategies</strong>.</p>
 
         <h2>Results and Impact</h2>
         <p>Implementing this automation system transformed the team's outbound operations.</p>
 
         <h3>Major Improvements</h3>
-        <p><strong>Reduced manual work</strong><br />The marketing team no longer had to manually copy data or track outreach.</p>
-        <p><strong>More consistent campaigns</strong><br />Automation ensured that outreach and follow-ups were always executed on schedule.</p>
-        <p><strong>Higher data quality</strong><br />Validation and deduplication significantly improved CRM accuracy.</p>
+        <p><strong>Reduced manual work</strong><br />The marketing team no longer had to manually copy data or track
+          outreach.</p>
+        <p><strong>More consistent campaigns</strong><br />Automation ensured that outreach and follow-ups were always
+          executed on schedule.</p>
+        <p><strong>Higher data quality</strong><br />Validation and deduplication significantly improved CRM accuracy.
+        </p>
         <p><strong>Better strategic focus</strong><br />Instead of handling operations, the team could now focus on:</p>
         <ul>
           <li>refining messaging</li>
@@ -195,21 +219,26 @@
         </ul>
 
         <h2>Why This Matters for GTM Engineering</h2>
-        <p>This project highlights the growing importance of <strong>GTM engineering</strong> in modern SaaS companies.</p>
-        <p>Rather than relying on manual workflows, GTM engineers build <strong>automated revenue systems</strong> that integrate:</p>
+        <p>This project highlights the growing importance of <strong>GTM engineering</strong> in modern SaaS companies.
+        </p>
+        <p>Rather than relying on manual workflows, GTM engineers build <strong>automated revenue systems</strong> that
+          integrate:</p>
         <ul>
           <li>data pipelines</li>
           <li>CRM platforms</li>
           <li>marketing automation tools</li>
           <li>analytics dashboards</li>
         </ul>
-        <p>By combining engineering principles with marketing operations, GTM engineering enables companies to build <strong>scalable, data-driven growth engines</strong>.</p>
+        <p>By combining engineering principles with marketing operations, GTM engineering enables companies to build
+          <strong>scalable, data-driven growth engines</strong>.</p>
 
         <h2>Final Thoughts</h2>
         <p>Outbound marketing is most effective when it is <strong>systematic and scalable</strong>.</p>
-        <p>By integrating Clay, n8n, HubSpot, and Google Sheets into a unified automation pipeline, we transformed a manual process into a <strong>reliable outbound engine</strong>.</p>
+        <p>By integrating Clay, n8n, HubSpot, and Google Sheets into a unified automation pipeline, we transformed a
+          manual process into a <strong>reliable outbound engine</strong>.</p>
         <p>The biggest takeaway is simple:</p>
-        <blockquote>When you automate the operational layer of outbound marketing, your team gains the time and clarity needed to focus on strategy, experimentation, and growth.</blockquote>
+        <blockquote>When you automate the operational layer of outbound marketing, your team gains the time and clarity
+          needed to focus on strategy, experimentation, and growth.</blockquote>
 
         <section class="cta-section" id="contact">
           <h2>Have an idea?<br />Let's build it.</h2>
@@ -236,7 +265,8 @@
           <div>
             <div class="name">Keyvan Montazeri</div>
             <div class="role">Startup MVP Engineer - Solutions Architect</div>
-            <p class="bio">18+ years building MVPs and solving hard tech problems for startups. I help founders move fast
+            <p class="bio">18+ years building MVPs and solving hard tech problems for startups. I help founders move
+              fast
               and ship products that matter.</p>
           </div>
         </div>
