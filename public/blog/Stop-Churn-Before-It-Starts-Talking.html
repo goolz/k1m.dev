@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stop Churn Before It Starts Talking</title>
+  <meta name="description"
+    content="Wire Gong, ChurnZero, n8n, and Slack into a real-time churn early-warning system that surfaces at-risk accounts before your CSMs pick up the phone." />
+  <meta property="og:title" content="Stop Churn Before It Starts Talking — GTM Engineering Playbook" />
+  <meta property="og:description"
+    content="Wire Gong, ChurnZero, n8n, and Slack into a real-time churn early-warning system that surfaces at-risk accounts before your CSMs pick up the phone." />
+  <meta property="og:image" content="https://k1m.dev/images/Stop%20Churn%20Before%20It%20Starts%20Talking.png" />
+  <meta property="og:url" content="https://k1m.dev/blog/Stop-Churn-Before-It-Starts-Talking" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    /* Aligned with signal-post / blog playbook articles */
+    .churn-post .tool-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.5rem 0 2.25rem;
+    }
+
+    .churn-post .tool-badge {
+      font-family: ui-monospace, monospace;
+      font-size: 0.625rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.55rem;
+      border-radius: 0.25rem;
+      border: 1px solid;
+    }
+
+    .churn-post .badge-n8n {
+      background: rgba(251, 146, 60, 0.12);
+      border-color: rgba(251, 146, 60, 0.35);
+      color: #fb923c;
+    }
+
+    .churn-post .badge-gong {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.35);
+      color: #34d399;
+    }
+
+    .churn-post .badge-churnz {
+      background: rgba(59, 130, 246, 0.14);
+      border-color: rgba(59, 130, 246, 0.4);
+      color: #93c5fd;
+    }
+
+    .churn-post .badge-slack {
+      background: rgba(167, 139, 250, 0.12);
+      border-color: rgba(167, 139, 250, 0.4);
+      color: #c4b5fd;
+    }
+
+    .churn-post .section-label {
+      font-family: ui-monospace, monospace;
+      font-size: 0.625rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #a78bfa;
+      margin-bottom: 0.5rem;
+    }
+
+    .churn-post .section-label.deck-hook {
+      margin-bottom: 1rem;
+    }
+
+    .churn-post .section {
+      margin-bottom: 2rem;
+    }
+
+    .churn-post .section:first-of-type > h2 {
+      margin-top: 0;
+    }
+
+    .churn-post h3 {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #e5e7eb;
+      margin-bottom: 0.35rem;
+    }
+
+    html.light .churn-post h3 {
+      color: #111827;
+    }
+
+    .churn-post .divider {
+      border: none;
+      border-top: 1px solid #374151;
+      margin: 2.5rem 0;
+    }
+
+    html.light .churn-post .divider {
+      border-top-color: #e5e7eb;
+    }
+
+    .churn-post .pull-quote {
+      border-left: 3px solid #ea580c;
+      padding: 1rem 1.25rem;
+      margin: 1.75rem 0;
+      background: rgba(251, 146, 60, 0.08);
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+
+    .churn-post .pull-quote p {
+      font-family: Georgia, ui-serif, serif;
+      font-size: 1.125rem;
+      font-style: italic;
+      font-weight: 400;
+      color: #e5e7eb;
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    html.light .churn-post .pull-quote {
+      background: rgba(251, 146, 60, 0.06);
+    }
+
+    html.light .churn-post .pull-quote p {
+      color: #374151;
+    }
+
+    .churn-post .flow {
+      background: rgba(17, 24, 39, 0.5);
+      border: 1px solid #374151;
+      border-radius: 0.75rem;
+      padding: 1.25rem 1rem;
+      margin: 1.25rem 0;
+    }
+
+    .churn-post .flow-title {
+      font-family: ui-monospace, monospace;
+      font-size: 0.625rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      margin-bottom: 1.15rem;
+    }
+
+    .churn-post .flow-steps {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+    }
+
+    .churn-post .flow-step {
+      flex: 1;
+      text-align: center;
+      position: relative;
+      min-width: 0;
+    }
+
+    .churn-post .flow-step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -6px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.875rem;
+      color: #6b7280;
+      z-index: 1;
+    }
+
+    .churn-post .step-icon {
+      width: 2.625rem;
+      height: 2.625rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.125rem;
+      margin: 0 auto 0.375rem;
+      border: 1px solid #4b5563;
+      background: #111827;
+    }
+
+    .churn-post .step-label {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: #9ca3af;
+      line-height: 1.35;
+    }
+
+    .churn-post .signal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.625rem;
+      margin: 1.25rem 0;
+    }
+
+    .churn-post .signal-card {
+      background: rgba(17, 24, 39, 0.35);
+      border: 1px solid #374151;
+      border-radius: 0.5rem;
+      padding: 0.875rem 1rem;
+    }
+
+    .churn-post .signal-card h3 {
+      font-size: 0.8125rem;
+    }
+
+    .churn-post .signal-card p {
+      font-size: 0.8125rem;
+      color: #9ca3af;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .churn-post .risk-dot {
+      display: inline-block;
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 50%;
+      margin-right: 0.375rem;
+      vertical-align: middle;
+    }
+
+    .churn-post .risk-high { background: #f87171; }
+    .churn-post .risk-med { background: #fbbf24; }
+
+    .churn-post .code-block {
+      background: #0f172a;
+      border: 1px solid #374151;
+      border-radius: 0.5rem;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      font-family: ui-monospace, monospace;
+      font-size: 0.75rem;
+      color: #d1d5db;
+      line-height: 1.65;
+      overflow-x: auto;
+      white-space: pre;
+    }
+
+    .churn-post .code-block .comment { color: #6b7280; }
+    .churn-post .code-block .key { color: #93c5fd; }
+    .churn-post .code-block .val { color: #34d399; }
+    .churn-post .code-block .str { color: #fca5a5; }
+
+    html.light .churn-post .code-block {
+      background: #111827;
+    }
+
+    .churn-post .slack-mock {
+      background: rgba(17, 24, 39, 0.6);
+      border: 1px solid #374151;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      margin: 1.25rem 0;
+    }
+
+    .churn-post .slack-header {
+      background: #111827;
+      border-bottom: 1px solid #374151;
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #9ca3af;
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+
+    .churn-post .slack-hash {
+      opacity: 0.5;
+      font-size: 0.875rem;
+    }
+
+    .churn-post .slack-body {
+      padding: 1rem;
+    }
+
+    .churn-post .slack-msg {
+      display: flex;
+      gap: 0.625rem;
+    }
+
+    .churn-post .slack-msg-main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .churn-post .slack-avatar {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 0.375rem;
+      background: #ea580c;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .churn-post .slack-meta {
+      font-size: 0.75rem;
+      color: #6b7280;
+      margin-bottom: 0.25rem;
+    }
+
+    .churn-post .slack-meta strong {
+      color: #e5e7eb;
+      font-weight: 600;
+      font-size: 0.8125rem;
+    }
+
+    .churn-post .slack-attachment {
+      border-left: 3px solid #ea580c;
+      padding: 0.5rem 0.875rem;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 0 0.375rem 0.375rem 0;
+      margin-top: 0.375rem;
+      font-size: 0.75rem;
+      line-height: 1.6;
+      color: #d1d5db;
+    }
+
+    .churn-post .slack-att-title {
+      font-weight: 600;
+      font-size: 0.8125rem;
+      color: #f9fafb;
+      margin-bottom: 0.25rem;
+    }
+
+    .churn-post .slack-lede {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-bottom: 0.5rem;
+    }
+
+    .churn-post .slack-lines {
+      font-size: 0.75rem;
+      margin-bottom: 0.375rem;
+      line-height: 1.65;
+      color: #d1d5db;
+    }
+
+    .churn-post .slack-field-wrap {
+      border-top: 1px solid #374151;
+      padding-top: 0.5rem;
+      margin-top: 0.25rem;
+    }
+
+    .churn-post .slack-field {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.375rem;
+      margin-top: 0.5rem;
+    }
+
+    .churn-post .slack-field-item {
+      font-size: 0.6875rem;
+    }
+
+    .churn-post .slack-field-label {
+      color: #6b7280;
+    }
+
+    .churn-post .slack-field-value {
+      font-weight: 500;
+      color: #f3f4f6;
+    }
+
+    .churn-post .slack-footer {
+      margin-top: 0.625rem;
+      font-size: 0.6875rem;
+      color: #9ca3af;
+    }
+
+    .churn-post .slack-footer strong {
+      color: #f9fafb;
+    }
+
+    .churn-post .slack-link {
+      color: #a78bfa;
+      text-decoration: none;
+    }
+
+    .churn-post .slack-link:hover {
+      text-decoration: underline;
+    }
+
+    .churn-post .score-bars {
+      margin: 1.25rem 0;
+    }
+
+    .churn-post .score-row {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      margin-bottom: 0.375rem;
+    }
+
+    .churn-post .score-label {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      min-width: 11rem;
+    }
+
+    .churn-post .score-bar-wrap {
+      flex: 1;
+      height: 0.375rem;
+      background: #1f2937;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .churn-post .score-val {
+      font-size: 0.75rem;
+      font-weight: 600;
+      min-width: 4rem;
+      text-align: right;
+      color: #f3f4f6;
+    }
+
+    .churn-post .score-hint {
+      font-size: 0.6875rem;
+      color: #6b7280;
+      margin: -0.2rem 0 0.6rem calc(11rem + 0.625rem);
+    }
+
+    html.light .churn-post .score-hint {
+      color: #6b7280;
+    }
+
+    .churn-post .metric-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8125rem;
+      margin: 1rem 0;
+    }
+
+    .churn-post .metric-table th {
+      font-weight: 600;
+      font-family: ui-monospace, monospace;
+      font-size: 0.625rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      padding: 0.55rem 0.875rem;
+      text-align: left;
+      border-bottom: 1px solid #374151;
+      background: #111827;
+    }
+
+    .churn-post .metric-table td {
+      padding: 0.55rem 0.875rem;
+      border-bottom: 1px solid #1f2937;
+      vertical-align: top;
+    }
+
+    .churn-post .metric-table tr:nth-child(even) td {
+      background: rgba(17, 24, 39, 0.25);
+    }
+
+    .churn-post .risk-pts-high {
+      color: #f87171 !important;
+      font-weight: 600;
+    }
+
+    .churn-post .risk-pts-med {
+      color: #fbbf24 !important;
+      font-weight: 600;
+    }
+
+    .churn-post .tag {
+      display: inline-block;
+      font-size: 0.625rem;
+      font-weight: 600;
+      padding: 0.125rem 0.375rem;
+      border-radius: 0.25rem;
+    }
+
+    .churn-post .tag-gong {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+    }
+
+    .churn-post .tag-churnz {
+      background: rgba(59, 130, 246, 0.15);
+      color: #93c5fd;
+    }
+
+    .churn-post .n8n-flow {
+      background: rgba(17, 24, 39, 0.5);
+      border: 1px solid #374151;
+      border-radius: 0.75rem;
+      padding: 1rem 1rem;
+      margin: 1.25rem 0;
+      overflow-x: auto;
+    }
+
+    .churn-post .n8n-nodes {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      min-width: 620px;
+    }
+
+    .churn-post .n8n-node {
+      border: 1px solid #4b5563;
+      border-radius: 0.5rem;
+      padding: 0.375rem 0.625rem;
+      background: #111827;
+      text-align: center;
+      min-width: 5.5rem;
+    }
+
+    .churn-post .n8n-node-icon {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .churn-post .n8n-node-name {
+      font-size: 0.625rem;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .churn-post .n8n-node-type {
+      font-size: 0.5625rem;
+      color: #6b7280;
+    }
+
+    .churn-post .n8n-arrow {
+      flex: 1;
+      height: 1px;
+      background: #4b5563;
+      position: relative;
+      min-width: 0.875rem;
+    }
+
+    .churn-post .n8n-arrow::after {
+      content: "›";
+      position: absolute;
+      right: -2px;
+      top: -0.52rem;
+      font-size: 0.9375rem;
+      color: #6b7280;
+    }
+
+    .churn-post .checklist {
+      list-style: none;
+      margin: 1rem 0;
+      padding: 0;
+    }
+
+    .churn-post .checklist li {
+      font-size: 0.875rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #1f2937;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      color: #d1d5db;
+    }
+
+    .churn-post .checklist li:last-child {
+      border-bottom: none;
+    }
+
+    .churn-post .checklist strong {
+      color: #fff;
+    }
+
+    .churn-post .check-icon {
+      color: #34d399;
+      font-size: 0.8125rem;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+
+    html.light .churn-post code {
+      background: #f3f4f6;
+      color: #b45309;
+    }
+
+    .churn-post code {
+      background: rgba(31, 41, 55, 0.9);
+      padding: 0.1rem 0.35rem;
+      border-radius: 0.2rem;
+      font-family: ui-monospace, monospace;
+      font-size: 0.85em;
+      color: #fdba74;
+    }
+
+    .churn-post .churn-outro {
+      color: #6b7280 !important;
+      font-size: 0.8125rem !important;
+      margin-top: 1.5rem;
+    }
+
+    html.light .churn-post strong {
+      color: #111827;
+    }
+
+    html.light .churn-post .flow,
+    html.light .churn-post .signal-card,
+    html.light .churn-post .n8n-flow,
+    html.light .churn-post .n8n-node,
+    html.light .churn-post .slack-mock,
+    html.light .churn-post .metric-table td {
+      background: rgba(249, 250, 251, 0.95);
+      border-color: #e5e7eb !important;
+    }
+
+    html.light .churn-post .metric-table th {
+      background: #f3f4f6;
+      color: #374151;
+      border-bottom-color: #e5e7eb;
+    }
+
+    html.light .churn-post .metric-table td {
+      border-bottom-color: #f3f4f6;
+      color: #111827;
+    }
+
+    html.light .churn-post .metric-table tr:nth-child(even) td {
+      background: #f9fafb;
+    }
+
+    html.light .churn-post .step-icon {
+      background: #fff;
+      border-color: #e5e7eb;
+    }
+
+    html.light .churn-post .step-label {
+      color: #6b7280;
+    }
+
+    html.light .churn-post .signal-card p {
+      color: #4b5563;
+    }
+
+    html.light .churn-post .flow-title,
+    html.light .churn-post .score-label {
+      color: #6b7280;
+    }
+
+    html.light .churn-post .score-bar-wrap {
+      background: #e5e7eb;
+    }
+
+    html.light .churn-post .score-val {
+      color: #111827;
+    }
+
+    html.light .churn-post .slack-header {
+      background: #f9fafb;
+      border-bottom-color: #e5e7eb;
+    }
+
+    html.light .churn-post .slack-attachment {
+      background: rgba(249, 250, 251, 0.9);
+    }
+
+    html.light .churn-post .slack-meta strong {
+      color: #111827;
+    }
+
+    html.light .churn-post .slack-att-title,
+    html.light .churn-post .slack-footer strong,
+    html.light .churn-post .slack-field-value {
+      color: #111827;
+    }
+
+    html.light .churn-post .slack-lines,
+    html.light .churn-post .slack-attachment {
+      color: #374151;
+    }
+
+    html.light .churn-post .slack-footer,
+    html.light .churn-post .slack-lede {
+      color: #6b7280;
+    }
+
+    html.light .churn-post .slack-field-wrap {
+      border-top-color: #e5e7eb;
+    }
+
+    html.light .churn-post .checklist li {
+      border-bottom-color: #f3f4f6;
+      color: #374151;
+    }
+
+    html.light .churn-post .checklist strong {
+      color: #111827;
+    }
+
+    html.light .churn-post .n8n-arrow {
+      background: #e5e7eb;
+    }
+
+    @media (max-width: 600px) {
+      .churn-post .signal-grid {
+        grid-template-columns: 1fr;
+      }
+      .churn-post .flow-steps {
+        flex-wrap: wrap;
+        gap: 0.625rem;
+      }
+      .churn-post .flow-step:not(:last-child)::after {
+        display: none;
+      }
+      .churn-post .n8n-nodes {
+        min-width: 500px;
+      }
+      .churn-post .score-label {
+        min-width: 9rem;
+      }
+      .churn-post .score-hint {
+        margin-left: 0;
+      }
+    }
+
+</style>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MG24GTB4');</script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG24GTB4" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <header class="site-header">
+    <a href="/" class="nav-logo"><img src="/favicon.svg" alt="k1m.dev" width="40" height="40" /></a>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav class="nav-top" id="nav-menu" aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/ai-revenue.html">Growth Revenue</a>
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">
+        <span class="theme-icon sun">☀</span>
+        <span class="theme-icon moon">☽</span>
+      </button>
+    </nav>
+    <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+  </header>
+
+  <!-- Article Hero -->
+  <section class="blog-hero">
+    <div class="blog-hero-bg"></div>
+    <div class="container blog-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href="/blog/">Blog</a>
+        <span>/</span>
+        <span class="breadcrumb-current">Stop Churn Before It Starts Talking</span>
+      </nav>
+      <h1 class="blog-title">Stop Churn Before It<span class="gradient"> Starts Talking</span></h1>
+      <p class="subtitle">How to wire Gong, ChurnZero, n8n, and Slack into a real-time early-warning system that surfaces at-risk accounts before your CSMs even pick up the phone.</p>
+      <div class="meta">
+        <span>👤 Keyvan Montazeri</span>
+        <span>⏱ 12 min read</span>
+        <span>📅 May 4, 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cover Image -->
+  <section class="cover-wrap">
+    <div class="container">
+      <div class="cover-wrap-inner">
+        <img src="/images/Stop%20Churn%20Before%20It%20Starts%20Talking.png"
+          alt="Stop churn before it starts talking — proactive signals funnel through shield to stronger relationships" />
+        <div class="cover-overlay"></div>
+      </div>
+    </div>
+  </section>
+
+  <article>
+    <div class="container-narrow">
+      <div class="prose blog-prose churn-post">
+      <div class="section-label deck-hook">GTM Engineering Playbook · Churn Prevention</div>
+      <div class="tool-stack">
+        <span class="tool-badge badge-n8n">n8n · Workflow Automation</span>
+        <span class="tool-badge badge-gong">Gong · Conversation Intelligence</span>
+        <span class="tool-badge badge-churnz">ChurnZero · Customer Success</span>
+        <span class="tool-badge badge-slack">Slack · Team Alerts</span>
+      </div>
+
+  <!-- SECTION 1 -->
+  <div class="section">
+    <div class="section-label">The Problem</div>
+    <h2>Churn doesn't announce itself. Your tools already know.</h2>
+    <p>By the time a customer sends the cancellation email, the signal has been sitting in your data for weeks — buried across four platforms that never talk to each other. A call where the champion went quiet. A health score that dipped three Fridays in a row. A renewal conversation that keeps getting rescheduled. A feature adoption metric that flatlined in ChurnZero.</p>
+    <p>The challenge isn't data. It's synthesis. GTM teams have too many signals scattered across too many tools, with no connective tissue to transform noise into a coordinated save motion. This is exactly the problem n8n was built to solve — and when you connect it to Gong's conversation intelligence, ChurnZero's behavioral telemetry, and Slack's real-time reach, you get a churn radar that actually works.</p>
+    <div class="pull-quote">
+      <p>"The average enterprise loses 3–5% of revenue to churn that was detectable 30–60 days before it happened. The signals were there. The workflow wasn't."</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 2: ARCHITECTURE -->
+  <div class="section">
+    <div class="section-label">The Architecture</div>
+    <h2>Four tools, one pipeline, zero manual triage</h2>
+    <p>The system works in three layers: <strong>detect</strong> signals in Gong and ChurnZero, <strong>score</strong> risk in n8n using weighted logic, then <strong>route</strong> alerts to the right Slack channel with full context and a clear next action.</p>
+
+    <div class="flow">
+      <div class="flow-title">Signal-to-Action Pipeline</div>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="step-icon">📞</div>
+          <div class="step-label">Gong<br>Detects signal</div>
+        </div>
+        <div class="flow-step">
+          <div class="step-icon">📊</div>
+          <div class="step-label">ChurnZero<br>Health score</div>
+        </div>
+        <div class="flow-step">
+          <div class="step-icon">⚙️</div>
+          <div class="step-label">n8n<br>Scores &amp; routes</div>
+        </div>
+        <div class="flow-step">
+          <div class="step-icon">💬</div>
+          <div class="step-label">Slack<br>Alerts CSM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 3: GONG -->
+  <div class="section">
+    <div class="section-label">Layer 1 · Gong</div>
+    <h2>Reading the room from conversation data</h2>
+    <p>Gong is your earliest warning system. Before any metric changes, tone changes. Gong's trackers and API let you pull structured signals from every call — sentiment shifts, keyword flags, talk-time ratios, and topic trends that correlate with churn risk.</p>
+    <p>Configure these Gong trackers as your primary churn signals, then expose them via the Gong API to your n8n workflow:</p>
+
+    <div class="signal-grid">
+      <div class="signal-card">
+        <h3><span class="risk-dot risk-high"></span>Competitor mentions</h3>
+        <p>Any mention of named competitors in the last 60 days. Weight: High. Combine with deal stage for urgency.</p>
+      </div>
+      <div class="signal-card">
+        <h3><span class="risk-dot risk-high"></span>Champion change signals</h3>
+        <p>"We have a new VP," "our team restructured," "I'm no longer the decision-maker." Auto-flag these phrases.</p>
+      </div>
+      <div class="signal-card">
+        <h3><span class="risk-dot risk-high"></span>Negative sentiment trend</h3>
+        <p>Three consecutive calls with declining sentiment scores below 40%. The trend matters more than any single score.</p>
+      </div>
+      <div class="signal-card">
+        <h3><span class="risk-dot risk-med"></span>Low engagement talk-time</h3>
+        <p>Customer talk-time drops below 30%. A quiet customer in a QBR is rarely a satisfied one.</p>
+      </div>
+      <div class="signal-card">
+        <h3><span class="risk-dot risk-med"></span>ROI / value challenges</h3>
+        <p>"Are we getting value," "hard to justify the cost," "budget pressure." Phrases that precede renewal challenges.</p>
+      </div>
+      <div class="signal-card">
+        <h3><span class="risk-dot risk-med"></span>Meeting avoidance</h3>
+        <p>Two or more reschedules or no-shows on CSM calls in a 30-day window. Disengagement before disappearance.</p>
+      </div>
+    </div>
+
+    <p>Pull these via the Gong API's <code>/v2/calls</code> and <code>/v2/calls/extensive</code> endpoints. Schedule your n8n HTTP Request node to poll every 4 hours, or use Gong webhooks if you're on an enterprise tier for real-time delivery.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 4: CHURNZERO -->
+  <div class="section">
+    <div class="section-label">Layer 2 · ChurnZero</div>
+    <h2>Behavioral telemetry that Gong can't see</h2>
+    <p>ChurnZero fills in the blind spots — what happens between calls. Product usage patterns, health score trajectories, NPS trends, and renewal proximity all live here. Your n8n workflow should pull from ChurnZero's REST API on a scheduled basis and merge this data with Gong signals into a unified risk profile.</p>
+
+    <table class="metric-table">
+      <thead>
+        <tr>
+          <th>Signal</th>
+          <th>Threshold</th>
+          <th>Risk Weight</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Health Score</td>
+          <td>Below 50 for 14+ days</td>
+          <td class="risk-pts-high">30 pts</td>
+          <td><span class="tag tag-churnz">ChurnZero</span></td>
+        </tr>
+        <tr>
+          <td>Feature adoption drop</td>
+          <td>&gt;40% decline month-over-month</td>
+          <td class="risk-pts-high">25 pts</td>
+          <td><span class="tag tag-churnz">ChurnZero</span></td>
+        </tr>
+        <tr>
+          <td>Login frequency</td>
+          <td>Zero logins in last 21 days</td>
+          <td class="risk-pts-med">20 pts</td>
+          <td><span class="tag tag-churnz">ChurnZero</span></td>
+        </tr>
+        <tr>
+          <td>NPS score</td>
+          <td>Detractor (0–6)</td>
+          <td class="risk-pts-med">15 pts</td>
+          <td><span class="tag tag-churnz">ChurnZero</span></td>
+        </tr>
+        <tr>
+          <td>Negative sentiment call</td>
+          <td>Score below 40</td>
+          <td class="risk-pts-med">20 pts</td>
+          <td><span class="tag tag-gong">Gong</span></td>
+        </tr>
+        <tr>
+          <td>Competitor mentioned</td>
+          <td>Any mention in last 60 days</td>
+          <td class="risk-pts-high">30 pts</td>
+          <td><span class="tag tag-gong">Gong</span></td>
+        </tr>
+        <tr>
+          <td>Renewal proximity</td>
+          <td>Within 90 days</td>
+          <td class="risk-pts-high">Multiplier ×1.5</td>
+          <td><span class="tag tag-churnz">ChurnZero</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Use ChurnZero's <code>/api/v2/accounts</code> endpoint to pull health scores and usage metrics. Map account IDs between ChurnZero and Gong using your CRM's account identifier as the join key — this is the critical piece of data engineering that makes the merged risk score possible.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 5: N8N -->
+  <div class="section">
+    <div class="section-label">Layer 3 · n8n</div>
+    <h2>The orchestration layer that ties it all together</h2>
+    <p>n8n is the connective tissue. A single workflow polls both Gong and ChurnZero, merges signals by account, calculates a composite risk score, applies routing logic, and pushes a structured Slack alert — all without writing a backend service or managing infrastructure.</p>
+
+    <div class="n8n-flow">
+      <div class="n8n-nodes">
+        <div class="n8n-node">
+          <div class="n8n-node-icon">⏰</div>
+          <div class="n8n-node-name">Schedule Trigger</div>
+          <div class="n8n-node-type">Every 4h</div>
+        </div>
+        <div class="n8n-arrow"></div>
+        <div class="n8n-node">
+          <div class="n8n-node-icon">📞</div>
+          <div class="n8n-node-name">Gong API</div>
+          <div class="n8n-node-type">HTTP Request</div>
+        </div>
+        <div class="n8n-arrow"></div>
+        <div class="n8n-node">
+          <div class="n8n-node-icon">📊</div>
+          <div class="n8n-node-name">ChurnZero API</div>
+          <div class="n8n-node-type">HTTP Request</div>
+        </div>
+        <div class="n8n-arrow"></div>
+        <div class="n8n-node">
+          <div class="n8n-node-icon">🔀</div>
+          <div class="n8n-node-name">Merge &amp; Score</div>
+          <div class="n8n-node-type">Code Node</div>
+        </div>
+        <div class="n8n-arrow"></div>
+        <div class="n8n-node">
+          <div class="n8n-node-icon">🔍</div>
+          <div class="n8n-node-name">IF ≥ 60 pts</div>
+          <div class="n8n-node-type">Condition</div>
+        </div>
+        <div class="n8n-arrow"></div>
+        <div class="n8n-node">
+          <div class="n8n-node-icon">💬</div>
+          <div class="n8n-node-name">Slack Alert</div>
+          <div class="n8n-node-type">Send Message</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="code-block"><span class="comment">// n8n Code Node — Churn Risk Scorer</span>
+<span class="key">const</span> gongData = $input.item(0).json;
+<span class="key">const</span> czData  = $input.item(1).json;
+
+<span class="key">let</span> riskScore = 0;
+<span class="key">const</span> signals = [];
+
+<span class="comment">// ChurnZero signals</span>
+<span class="key">if</span> (czData.healthScore &lt; 50) {
+  riskScore += 30;
+  signals.push(<span class="str">"🔴 Health score critical: "</span> + czData.healthScore);
+}
+<span class="key">if</span> (czData.lastLoginDays &gt; 21) {
+  riskScore += 20;
+  signals.push(<span class="str">"🔴 No login in 21+ days"</span>);
+}
+<span class="key">if</span> (czData.featureAdoptionDelta &lt; -0.4) {
+  riskScore += 25;
+  signals.push(<span class="str">"🟡 Feature adoption -40% MoM"</span>);
+}
+<span class="key">if</span> (czData.npsScore !== null &amp;&amp; czData.npsScore &lt;= 6) {
+  riskScore += 15;
+  signals.push(<span class="str">"🟡 NPS detractor: "</span> + czData.npsScore);
+}
+
+<span class="comment">// Gong signals</span>
+<span class="key">if</span> (gongData.competitorMentioned) {
+  riskScore += 30;
+  signals.push(<span class="str">"🔴 Competitor mentioned on call"</span>);
+}
+<span class="key">if</span> (gongData.avgSentiment &lt; 40) {
+  riskScore += 20;
+  signals.push(<span class="str">"🟡 Avg call sentiment: "</span> + gongData.avgSentiment);
+}
+
+<span class="comment">// Renewal proximity multiplier</span>
+<span class="key">if</span> (czData.daysToRenewal &lt; 90) {
+  riskScore = Math.round(riskScore * 1.5);
+  signals.push(<span class="str">"⚡ Renewal in "</span> + czData.daysToRenewal + <span class="str">" days"</span>);
+}
+
+<span class="key">return</span> [{ json: {
+  accountName:   czData.accountName,
+  csm:           czData.csmSlackId,
+  arr:           czData.arr,
+  riskScore,
+  riskTier:      riskScore &gt;= 80 ? <span class="str">"CRITICAL"</span> : riskScore &gt;= 60 ? <span class="str">"HIGH"</span> : <span class="str">"MEDIUM"</span>,
+  signals,
+  callUrl:       gongData.lastCallUrl,
+  daysToRenewal: czData.daysToRenewal
+}}];</div>
+
+    <p>The IF node downstream filters to only accounts with a risk score at or above 60. Scores below that threshold get logged to a Google Sheet for weekly review — you don't want to flood Slack with noise, only send what requires human action today.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 6: SLACK -->
+  <div class="section">
+    <div class="section-label">Layer 4 · Slack</div>
+    <h2>Alerts that drive action, not just awareness</h2>
+    <p>The Slack message is where most teams fail. They push a raw data dump that nobody acts on. A well-designed churn alert answers four questions in under 10 seconds: who is at risk, why, how urgent, and what should I do right now.</p>
+
+    <div class="slack-mock">
+      <div class="slack-header">
+        <span class="slack-hash">#</span>
+        cs-churn-alerts
+      </div>
+      <div class="slack-body">
+        <div class="slack-msg">
+          <div class="slack-avatar">C</div>
+          <div class="slack-msg-main">
+            <div class="slack-meta"><strong>ChurnRadar</strong> <span>Today at 09:14</span></div>
+            <div class="slack-attachment">
+              <div class="slack-att-title">🔴 CRITICAL — Acme Corp · Risk Score: 92</div>
+              <div class="slack-lede">Multiple compounding signals detected. Renewal in 47 days.</div>
+              <div class="slack-lines">
+                🔴 Health score critical: 34<br>
+                🔴 Competitor mentioned on call (Salesforce, Nov 14)<br>
+                🔴 No login in 26 days<br>
+                🟡 Feature adoption –52% MoM<br>
+                ⚡ Renewal in 47 days
+              </div>
+              <div class="slack-field-wrap">
+                <div class="slack-field">
+                  <div class="slack-field-item">
+                    <div class="slack-field-label">ARR at Risk</div>
+                    <div class="slack-field-value">$84,000</div>
+                  </div>
+                  <div class="slack-field-item">
+                    <div class="slack-field-label">CSM Owner</div>
+                    <div class="slack-field-value">@sarah.chen</div>
+                  </div>
+                  <div class="slack-field-item">
+                    <div class="slack-field-label">Last Call</div>
+                    <div class="slack-field-value"><a href="#" class="slack-link">View in Gong ↗</a></div>
+                  </div>
+                  <div class="slack-field-item">
+                    <div class="slack-field-label">ChurnZero</div>
+                    <div class="slack-field-value"><a href="#" class="slack-link">Open Account ↗</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="slack-footer">
+                👉 <strong>Suggested action:</strong> Executive sponsor outreach + internal account review within 48h.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p>Route alerts to different channels based on severity: <code>#cs-churn-alerts</code> for High and Critical, <code>#cs-weekly-watch</code> for Medium scores reviewed in the weekly standup. Tag the account owner directly in Critical alerts — passive channel monitoring isn't enough when $80k of ARR is at stake.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 7: IMPLEMENTATION -->
+  <div class="section">
+    <div class="section-label">Implementation</div>
+    <h2>How to ship this in two weeks</h2>
+    <ul class="checklist">
+      <li><span class="check-icon">✓</span><div><strong>Week 1, Day 1–2:</strong> Stand up n8n (self-hosted or cloud). Configure Gong API credentials and test the <code>/v2/calls/extensive</code> endpoint. Validate that you can pull structured call data for a sample account.</div></li>
+      <li><span class="check-icon">✓</span><div><strong>Week 1, Day 3–4:</strong> Connect ChurnZero API. Map account IDs between Gong, ChurnZero, and your CRM. This cross-system join is the most important technical step — invest time here.</div></li>
+      <li><span class="check-icon">✓</span><div><strong>Week 1, Day 5:</strong> Build the n8n Code node with your scoring logic. Start with 3–4 signals only. Validate scores against 10 known at-risk accounts from your last quarter.</div></li>
+      <li><span class="check-icon">✓</span><div><strong>Week 2, Day 1–2:</strong> Wire the Slack output. Send test alerts to a private channel. Get feedback from 2–3 CSMs on the format.</div></li>
+      <li><span class="check-icon">✓</span><div><strong>Week 2, Day 3–4:</strong> Tune thresholds and routing. Set the schedule. Add error handling and a fallback log to Google Sheets for missed alerts.</div></li>
+      <li><span class="check-icon">✓</span><div><strong>Week 2, Day 5:</strong> Go live on your highest-ARR segment first. Run for two weeks before expanding to your full book of business. Measure false-positive rate weekly and adjust weights.</div></li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 8: RESULTS -->
+  <div class="section">
+    <div class="section-label">Expected Outcomes</div>
+    <h2>What teams using this stack typically see</h2>
+    <div class="score-bars">
+      <div class="score-row">
+        <div class="score-label">Earlier detection</div>
+        <div class="score-bar-wrap"><div class="score-bar" style="width:85%;background:#C0392B"></div></div>
+        <div class="score-val">30–45 days</div>
+      </div>
+      <div class="score-hint">Average lead time gained before churn event</div>
+      <div class="score-row">
+        <div class="score-label">Save rate on flagged accounts</div>
+        <div class="score-bar-wrap"><div class="score-bar" style="width:65%;background:#2e8b45"></div></div>
+        <div class="score-val">~65%</div>
+      </div>
+      <div class="score-hint">Accounts flagged and acted on within 7 days</div>
+      <div class="score-row">
+        <div class="score-label">CSM triage time saved</div>
+        <div class="score-bar-wrap"><div class="score-bar" style="width:70%;background:#3b5bdb"></div></div>
+        <div class="score-val">4–6 hrs/wk</div>
+      </div>
+      <div class="score-hint">Per CSM, previously spent on manual health score reviews</div>
+    </div>
+    <div class="pull-quote">
+      <p>"The goal isn't to automate customer success — it's to give CSMs a head start. When the signal arrives in Slack before the customer considers leaving, you're playing offense instead of defense."</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CLOSING -->
+  <div class="section">
+    <div class="section-label">Final Thought</div>
+    <h2>Build the radar, not just the alarm</h2>
+    <p>Most teams build reactive alerting — they learn about churn risk when it's already a crisis. The four-tool stack described here builds a radar: a continuous, automated system that reads weak signals before they compound into strong ones.</p>
+    <p>Gong hears what customers say. ChurnZero sees what they do. n8n connects the dots. Slack puts the right information in front of the right person at the right time. None of these tools alone tells the full story. Together, wired correctly, they give your CS team a meaningful head start on every renewal conversation that matters.</p>
+    <p class="churn-outro">Ship the first version fast. Tune it weekly. The signal is already in your data.</p>
+  </div>
+
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">k1m.dev</div>
+        <div class="footer-copy">Tech Engineer & MVP Builder</div>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/goolz" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+        <a href="https://linkedin.com/in/keyvan-montazeri" target="_blank" rel="noopener noreferrer"
+          aria-label="LinkedIn">LinkedIn</a>
+        <a href="mailto:hi@k1m.dev" aria-label="Email">Email</a>
+      </div>
+    </div>
+    <div class="footer-copy footer-copyright">© 2026 k1m.dev. All rights reserved.</div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    (function () {
+      var btn = document.getElementById('theme-toggle');
+      var html = document.documentElement;
+      var saved = localStorage.getItem('theme');
+      var isDark = saved !== 'light';
+
+      function apply() {
+        if (isDark) {
+          html.classList.add('dark');
+          html.classList.remove('light');
+        } else {
+          html.classList.remove('dark');
+          html.classList.add('light');
+        }
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      }
+
+      if (saved === 'light') {
+        isDark = false;
+      }
+      apply();
+
+      if (btn) {
+        btn.addEventListener('click', function () {
+          isDark = !isDark;
+          apply();
+        });
+      }
+    })();
+  </script>
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na3.hs-scripts.com/342879697.js"></script>
+</body>
+
+</html>
