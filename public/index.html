@@ -4,33 +4,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Build Smarter. Launch Faster. Grow Revenue. | k1m.dev</title>
+  <title>k1m.dev — AI Revenue Growth, GTM Engineering &amp; Automation</title>
   <meta name="description"
-    content="I help startups and companies design, build, and scale MVPs using modern technologies, automation, and AI-driven solutions that turn ideas into measurable business growth." />
-  <meta property="og:title" content="Build Smarter. Launch Faster. Grow Revenue." />
+    content="Turn data into revenue with AI-driven GTM systems, workflow automation, and operational dashboards. Built for startups and scale-ups — by Keyvan Montazeri." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://k1m.dev/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="k1m.dev" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="k1m.dev — AI Revenue Growth, GTM Engineering & Automation" />
   <meta property="og:description"
-    content="I help startups and companies design, build, and scale MVPs using modern technologies, automation, and AI-driven solutions." />
+    content="Turn data into revenue with AI-driven GTM systems, workflow automation, and operational dashboards. Built for startups and scale-ups." />
   <meta property="og:image" content="https://k1m.dev/images/k1m.png" />
-  <meta property="og:url" content="https://k1m.dev" />
+  <meta property="og:url" content="https://k1m.dev/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="k1m.dev — AI Revenue Growth, GTM Engineering & Automation" />
+  <meta name="twitter:description"
+    content="Turn data into revenue with AI-driven GTM systems, workflow automation, and operational dashboards." />
+  <meta name="twitter:image" content="https://k1m.dev/images/k1m.png" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/favicon.svg" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"k1m.dev","url":"https://k1m.dev/","description":"AI-driven GTM engineering, workflow automation, and revenue operations for startups and scale-ups."}
+  </script>
   <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-MG24GTB4');</script>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MG24GTB4');</script>
   <!-- End Google Tag Manager -->
-  <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="1lpyaBDHOTrw0VgNk" data-version="062024"></script>
+  <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="1lpyaBDHOTrw0VgNk"
+    data-version="062024"></script>
+  <style>
+    .challenges-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .challenge-item {
+      padding: 1.25rem 1.5rem;
+      border-radius: 0.75rem;
+      border: 1px solid #1f2937;
+      background: rgba(17, 24, 39, 0.5);
+    }
+
+    .challenge-item strong {
+      display: block;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .challenge-item p {
+      margin: 0;
+      font-size: 0.9375rem;
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+
+    html.light .challenge-item {
+      background: rgba(243, 244, 246, 0.9);
+      border-color: #e5e7eb;
+    }
+
+    html.light .challenge-item strong {
+      color: #111827;
+    }
+
+    html.light .challenge-item p {
+      color: #4b5563;
+    }
+  </style>
 </head>
 
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG24GTB4" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+
   <header class="site-header">
     <a href="/" class="nav-logo"><img src="/favicon.svg" alt="k1m.dev" width="40" height="40" /></a>
     <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
@@ -39,8 +88,9 @@
       <span class="nav-toggle-bar"></span>
     </button>
     <nav class="nav-top" id="nav-menu" aria-label="Main">
+      <a href="/" aria-current="page">Home</a>
+      <a href="/tech-engineer.html">Tech Engineer</a>
       <a href="/blog/">Blog</a>
-      <a href="/ai-revenue.html">Growth Revenue</a>
       <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">
         <span class="theme-icon sun">☀</span>
         <span class="theme-icon moon">☽</span>
@@ -49,465 +99,618 @@
     <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero hero-full">
-    <div class="hero-bg"></div>
-    <div class="container hero-inner">
-      <div class="hero-badge">Tech Engineer · Scalable Systems & MVPs</div>
-      <h1>I help startups and companies<br />build MVPs and grow Revenue.</h1>
-      <p class="subtitle">Tech Engineer with 18+ years of experience turning ideas into scalable products and
-        revenue-driven solutions using modern technology, automation, and AI.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn">Build Your MVP →</a>
-        <a href="#projects" class="btn btn-secondary">View Projects</a>
-      </div>
-      <div class="stats-row">
-        <div class="stat-card">
-          <span class="stat-num">18+</span>
-          <span class="stat-label">Years Experience</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num">50+</span>
-          <span class="stat-label">Products Built</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num">100%</span>
-          <span class="stat-label">Commitment</span>
-        </div>
-      </div>
-    </div>
-  </section>
+  <main>
 
-  <!-- Latest articles -->
-  <section class="section" id="latest-articles" aria-labelledby="latest-articles-heading">
-    <div class="container-wide">
-      <div class="section-header">
-        <h2 class="section-title" id="latest-articles-heading">Latest articles</h2>
-        <p class="section-intro">Notes on building with AI, static sites, landing pages, and GTM automation.</p>
+    <section class="hero hero-full">
+      <div class="hero-bg"></div>
+      <div class="container hero-inner">
+        <div class="hero-badge">AI-Powered Business Solutions</div>
+        <h1>Growth Revenue with AI-Driven GTM Engineering &amp; Automation</h1>
+        <p class="subtitle">
+          20 years in the GTM trenches — as an SDR, AE, and demand gen lead — then building the systems
+          that made it all faster, leaner, and more repeatable. We help teams optimize operations,
+          automate workflows, and make smarter decisions using AI, analytics, and modern tools.
+        </p>
+        <div class="hero-actions">
+          <a href="#cta" class="btn">Book a Strategy Call →</a>
+          <a href="#capabilities" class="btn btn-secondary">Learn More</a>
+        </div>
       </div>
-      <div class="home-blog-grid">
-        <!-- Two most recent posts only; update when publishing new articles -->
-        <article class="blog-card">
-          <a href="/blog/Stop-Churn-Before-It-Starts-Talking.html" class="blog-card-link">
-            <div class="blog-card-image">
-              <img src="/images/Stop%20Churn%20Before%20It%20Starts%20Talking.png"
-                alt="Stop churn — proactive signals and stronger customer relationships" />
-            </div>
-            <div class="blog-card-content">
-              <h3 class="blog-card-title">Stop Churn Before It Starts Talking</h3>
-              <p class="blog-card-summary">Wire Gong, ChurnZero, n8n, and Slack into a real-time churn early-warning system that surfaces at-risk accounts before your CSMs pick up the phone.</p>
-              <div class="blog-card-meta">
-                <span>👤 Keyvan Montazeri</span>
-                <span>⏱ 12 min read</span>
-                <span>📅 May 4, 2026</span>
-              </div>
-            </div>
-            <span class="blog-card-arrow">→</span>
-          </a>
-        </article>
-        <article class="blog-card">
-          <a href="/blog/Signal-Capture-From-Gong-Call-to-CRM-Action-in-Under-60-Seconds.html" class="blog-card-link">
-            <div class="blog-card-image">
-              <img src="/images/signal_capture_article.png"
-                alt="Signal capture pipeline from Gong through GPT-4o and n8n to Salesforce" />
-            </div>
-            <div class="blog-card-content">
-              <h3 class="blog-card-title">Signal Capture: From Gong Call to CRM Action in Under 60 Seconds</h3>
-              <p class="blog-card-summary">Wire Gong transcripts, GPT-4o extraction, and n8n into Salesforce write-back
-                — with a framework to measure hours reclaimed per rep.</p>
-              <div class="blog-card-meta">
-                <span>👤 Keyvan Montazeri</span>
-                <span>⏱ 17 min read</span>
-                <span>📅 April 29, 2026</span>
-              </div>
-            </div>
-            <span class="blog-card-arrow">→</span>
-          </a>
-        </article>
-      </div>
-      <p class="home-blog-all">
-        <a href="/blog/">View all articles →</a>
-      </p>
-    </div>
-  </section>
+    </section>
 
-  <!-- What I Do -->
-  <section class="section section-alt">
-    <div class="container-wide">
-      <div class="section-header">
-        <h2 class="section-title">What I Do</h2>
-        <p class="section-intro">I partner with founders to solve complex technical challenges and ship products that
-          matter.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">🚀</div>
-          <h3>MVP Architecture & Development</h3>
-          <p>Turn your idea into a working product fast. I design and build MVPs that validate your concept and attract
-            early users.</p>
+    <section class="section section-alt" id="operations">
+      <div class="container-wide">
+        <div class="section-header">
+          <h2 class="section-title">Transform Your Operations</h2>
+          <p class="section-intro">Unlock growth potential with AI-powered insights, automation, and real-time visibility.</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon">📦</div>
-          <h3>Full-Stack & Cloud Engineering</h3>
-          <p>End-to-end development from responsive frontends to scalable cloud infrastructure. Built for performance
-            and growth.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🔌</div>
-          <h3>API, SaaS & Integration Design</h3>
-          <p>Connect your product to the world. Clean APIs, third-party integrations, and SaaS architectures that just
-            work.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🔧</div>
-          <h3>Fixing, Scaling & Modernizing</h3>
-          <p>Rescue struggling products. Fix technical debt, improve performance, and modernize legacy systems for the
-            next stage.</p>
+        <div class="services-grid services-grid--center">
+          <div class="service-card">
+            <div class="service-icon">📈</div>
+            <h3>AI-Driven Insights</h3>
+            <p>Identify trends and performance gaps. Turn data into actionable decisions that drive revenue growth.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">⚡</div>
+            <h3>Workflow Automation</h3>
+            <p>Reduce manual work and connect systems seamlessly. Free your team to focus on high-impact activities.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📊</div>
+            <h3>Operational Dashboards</h3>
+            <p>Real-time visibility into your business. Clear KPIs that empower leadership to make informed decisions.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Skills -->
-  <section class="section section-skills">
-    <div class="container-wide">
-      <div class="section-header">
-        <h2 class="section-title">Skills & Expertise</h2>
-        <p class="section-intro">Full-stack expertise with a focus on modern, production-ready technologies.</p>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3>AI & Modern Tools</h3>
-          <div class="skill-tags">
-            <span>Generative AI (GenAI)</span><span>OpenAI API / GPT</span><span>AI-assisted Development</span><span>LLM
-              Fine-tuning</span><span>Hugging Face</span><span>Transformers</span><span>GitHub Copilot</span><span>AI
-              Workflow Automation</span><span>AI Telephony (Twilio GPT, RetellAI)</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Backend & Full Stack Development</h3>
-          <div class="skill-tags">
-            <span>Node.js</span><span>Python</span><span>TypeScript</span><span>JavaScript</span><span>NestJS</span><span>Express.js</span><span>Next.js</span><span>React</span><span>Angular</span><span>React
-              Native</span><span>Expo</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>API & Integration Architecture</h3>
-          <div class="skill-tags">
-            <span>REST APIs</span><span>Webhooks</span><span>Event-driven Architecture</span><span>OAuth
-              2.0</span><span>API Gateway Design</span><span>WebSockets</span><span>Message Queues
-              (RabbitMQ)</span><span>Redis Pub/Sub</span><span>JSON</span><span>GraphQL (working knowledge)</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Cloud & Infrastructure</h3>
-          <div class="skill-tags">
-            <span>AWS</span><span>Lambda</span><span>ECS</span><span>EC2</span><span>S3</span><span>API
-              Gateway</span><span>CloudWatch</span><span>IAM</span><span>VPC
-              Architecture</span><span>SNS</span><span>SES</span><span>DynamoDB</span><span>RDS</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>DevOps & Platform Engineering</h3>
-          <div class="skill-tags">
-            <span>Docker</span><span>Kubernetes</span><span>CI/CD Pipelines</span><span>GitHub
-              Actions</span><span>CircleCI</span><span>Terraform</span><span>Infrastructure as Code
-              (IaC)</span><span>Linux / Unix</span><span>Bash Scripting</span><span>Nginx</span><span>HAProxy</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Databases & Data Modeling</h3>
-          <div class="skill-tags">
-            <span>PostgreSQL</span><span>MongoDB</span><span>MySQL</span><span>MS SQL
-              Server</span><span>DynamoDB</span><span>Redis</span><span>NoSQL Data Modeling</span><span>Performance
-              Optimization</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Architecture & Scalability</h3>
-          <div class="skill-tags">
-            <span>Microservices Architecture</span><span>Distributed Systems</span><span>Multi-tenant SaaS
-              Design</span><span>High Availability</span><span>Fault Tolerance</span><span>Performance
-              Optimization</span><span>Scalable System Design</span><span>Legacy System Modernization</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Automation & Workflow Orchestration</h3>
-          <div class="skill-tags">
-            <span>n8n</span><span>Zapier</span><span>Make.com</span><span>Activepieces</span><span>Workflow
-              Automation</span><span>Webhook Orchestration</span><span>Business Process Automation</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>CRM, GTM & Revenue Operations</h3>
-          <div class="skill-tags">
-            <span>HubSpot</span><span>Salesforce</span><span>Odoo</span><span>CRM Architecture</span><span>Lead Routing
-              & Scoring</span><span>Sales Automation</span><span>Marketing Automation</span><span>PLG Systems</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Data, Analytics & BI</h3>
-          <div class="skill-tags">
-            <span>SQL</span><span>Python for Analytics</span><span>GA4</span><span>Tableau</span><span>Power
-              BI</span><span>Metabase</span><span>Looker</span><span>Mixpanel</span><span>Amplitude</span><span>Funnel
-              Analysis</span><span>Revenue Attribution</span><span>CAC / CPL / LTV Modeling</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Testing & Quality Engineering</h3>
-          <div class="skill-tags">
-            <span>TDD</span><span>Unit Testing</span><span>Integration Testing</span><span>Jest</span><span>Shift-left
-              Testing</span><span>Automated Testing Pipelines</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Security & Compliance</h3>
-          <div class="skill-tags">
-            <span>Secure API Design</span><span>IAM & Access Control</span><span>Encryption Best
-              Practices</span><span>Authentication & Authorization</span><span>Enterprise Security Alignment</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Pre-Sales & Customer Engineering</h3>
-          <div class="skill-tags">
-            <span>Technical Discovery</span><span>Solution Scoping</span><span>Technical
-              Workshops</span><span>Whiteboarding & Diagrams</span><span>PoC & Prototype Development</span><span>Sales
-              Engineering</span><span>Objection Handling</span><span>Value Mapping</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Leadership & Collaboration</h3>
-          <div class="skill-tags">
-            <span>Agile / Scrum</span><span>Sprint Planning</span><span>Team Mentoring</span><span>Stakeholder
-              Communication</span><span>Cross-functional Collaboration</span><span>Founder Mindset</span><span>Customer
-              Advisory</span>
-          </div>
-        </div>
-      </div>
-      <p class="skills-note">And many more... I adapt quickly to new technologies and prioritize the right tools for
-        your specific needs.</p>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section class="section" id="projects">
-    <div class="container-wide">
-      <div class="section-header">
-        <h2 class="section-title">Recent MVPs &amp; featured work</h2>
-        <p class="section-intro">MVP startups I built end-to-end, plus other products I've helped ship.</p>
-      </div>
-      <div class="projects-grid">
-        <div class="project-card" data-accent="blue">
-          <a class="project-card-media" href="https://crewa.app" target="_blank" rel="noopener noreferrer"
-            aria-label="Visit crewa.app">
-            <img src="/images/Crewa.png" width="80" height="80" alt="Crewa — find your running crew in Toronto" />
-          </a>
-          <h3><a href="https://crewa.app" target="_blank" rel="noopener noreferrer">Crewa.app</a></h3>
-          <p class="project-card-lead">Find Your<br />Running Crew<br />in Toronto</p>
-          <p>Match with ID-verified runners in your neighborhood. Same pace, same schedule. Create or join group runs of
-            2–5 people. Live in Toronto — and expanding to more cities soon.</p>
-          <span class="project-role">Recent MVP · Full-Stack Engineer</span>
-          <div class="project-tags">
-            <span>React</span><span>Next.js</span><span>Serverless</span><span>DynamoDB</span><span>Stripe</span>
-          </div>
-          <p class="project-card-site">
-            <a href="https://crewa.app" target="_blank" rel="noopener noreferrer">crewa.app →</a><br />
-            <a href="https://apps.apple.com/ca/app/crewa/id6758464999" target="_blank" rel="noopener noreferrer"
-              aria-label="Crewa on the Apple App Store">Crewa</a><span class="project-card-site-apple"> — App
-              Store</span>
+    <section class="section ai-solutions" id="services">
+      <div class="container-wide">
+        <div class="section-header">
+          <div class="hero-badge" style="margin-bottom: 1.5rem;">✨ AI-Powered Solutions</div>
+          <h2 class="section-title">Intelligent Automation That Drives Results</h2>
+          <p class="section-intro">
+            Deploy cutting-edge AI agents that work 24/7 to generate leads, handle calls, and
+            manage customer interactions—all integrated with your existing tools.
           </p>
         </div>
-        <div class="project-card" data-accent="pink">
-          <a class="project-card-media" href="https://totsbuds.com" target="_blank" rel="noopener noreferrer"
-            aria-label="Visit totsbuds.com">
-            <img src="/images/TotsBuds.png" width="80" height="80"
-              alt="TotsBuds — helping kids grow, learn, and thrive" />
-          </a>
-          <h3><a href="https://totsbuds.com" target="_blank" rel="noopener noreferrer">TotsBuds.com</a></h3>
-          <p class="project-card-lead">Growing Little Minds,<br />One Bud at a Time! 🌱</p>
-          <p>TotsBuds is your friendly companion for helping children grow, learn, and thrive. Packed with amazing tools
-            designed for educators and parents to support their little ones' journey.</p>
-          <p class="project-card-privacy">🔒 No AI used and no private data will be gathered for the children. 100%
-            private &amp; safe.</p>
-          <span class="project-role">Recent MVP · MVP Builder &amp; Lead Engineer</span>
-          <div class="project-tags"><span>React
-              Native</span><span>Node.js</span><span>AWS</span><span>PostgreSQL</span><span>Redis</span></div>
-          <p class="project-card-site">
-            <a href="https://totsbuds.com" target="_blank" rel="noopener noreferrer">totsbuds.com →</a><br />
-            <a href="https://apps.apple.com/ca/app/totsbuds/id6760270763" target="_blank" rel="noopener noreferrer"
-              aria-label="TotsBuds on the Apple App Store">TotsBuds</a><span class="project-card-site-apple"> — App
-              Store</span>
-          </p>
-        </div>
-        <div class="project-card" data-accent="emerald">
-          <div class="project-card-media project-card-media--wide">
-            <img src="/images/Fintech.png" width="640" height="360"
-              alt="Fintech startup platform — dashboard with inflation analytics and industry treemap" />
-          </div>
-          <h3>Fintech Startup Platform</h3>
-          <p>Secure payment processing and financial management system. Built with compliance, security, and scalability
-            at the core.</p>
-          <span class="project-role">Senior Architect</span>
-          <div class="project-tags"><span>TypeScript</span><span>Microservices</span><span>AWS
-              Lambda</span><span>PostgreSQL</span></div>
-        </div>
-        <div class="project-card" data-accent="violet">
-          <div class="project-card-media project-card-media--wide">
-            <img src="/images/property-mgmt.png" width="640" height="360"
-              alt="Property management SaaS — facility dashboard with utilities and financial status" />
-          </div>
-          <h3>Property Management SaaS</h3>
-          <p>All-in-one platform for property managers with tenant portals, maintenance tracking, and automated billing.
-          </p>
-          <span class="project-role">MVP Builder</span>
-          <div class="project-tags">
-            <span>React</span><span>Node.js</span><span>MongoDB</span><span>Docker</span><span>CI/CD</span>
-          </div>
-        </div>
-        <div class="project-card" data-accent="orange">
-          <h3>Dating App Startup</h3>
-          <p>Modern dating platform with AI-powered matching, real-time chat, and video features. Optimized for
-            mobile-first experience.</p>
-          <span class="project-role">Full-Stack Engineer</span>
-          <div class="project-tags"><span>React
-              Native</span><span>GraphQL</span><span>AWS</span><span>WebRTC</span><span>OpenAI</span></div>
-        </div>
-        <div class="project-card" data-accent="indigo">
-          <h3>AI-Powered Analytics Tool</h3>
-          <p>Business intelligence platform leveraging GenAI for automated insights and predictive analytics.</p>
-          <span class="project-role">Technical Lead</span>
-          <div class="project-tags"><span>Next.js</span><span>Python</span><span>OpenAI</span><span>Vector
-              DB</span><span>AWS</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- How I Work -->
-  <section class="section section-alt">
-    <div class="container-wide">
-      <div class="section-header">
-        <h2 class="section-title">How I Work</h2>
-        <p class="section-intro">A proven process that takes your idea from concept to customers.</p>
-      </div>
-      <div class="steps-grid">
-        <div class="step-card">
-          <span class="step-num">01</span>
-          <h3>Discovery & Idea Validation</h3>
-          <p>We start by understanding your vision, target users, and business goals. I help validate assumptions and
-            define the right MVP scope.</p>
-        </div>
-        <div class="step-card">
-          <span class="step-num">02</span>
-          <h3>MVP Architecture & Planning</h3>
-          <p>I design the technical architecture, choose the right tech stack, and create a roadmap that balances speed
-            with quality.</p>
-        </div>
-        <div class="step-card">
-          <span class="step-num">03</span>
-          <h3>Build, Iterate & Launch</h3>
-          <p>Rapid development with regular check-ins. You see progress weekly, give feedback, and we iterate until it's
-            ready to launch.</p>
-        </div>
-        <div class="step-card">
-          <span class="step-num">04</span>
-          <h3>Scale & Optimize</h3>
-          <p>Post-launch, I help you scale based on real user feedback, optimize performance, and add features that
-            drive growth.</p>
-        </div>
-      </div>
-      <p class="section-note">I work closely with founders throughout the journey—transparent communication, no
-        surprises, and a genuine partnership focused on your success.</p>
-    </div>
-  </section>
+        <div class="ai-cards-grid">
 
-  <!-- About -->
-  <section class="section">
-    <div class="container-wide">
-      <div class="about-grid">
-        <div class="about-image-wrap">
-          <img src="/images/k1m.png" alt="Keyvan (K1) - Tech Engineer" class="about-image" />
-        </div>
-        <div class="about-content">
-          <span class="about-badge">About Me</span>
-          <h2 class="section-title">Building products is what I do best.</h2>
-          <div class="about-text">
-            <p>My name is <strong>Keyvan (K1)</strong> and I'm a tech engineer with <strong>18+ years of
-                experience</strong> building products across industries—from early-stage startups to established
-              companies.</p>
-            <p>What drives me is the <strong>0 → 1 journey</strong>: taking an idea and transforming it into something
-              real that people use and love. I've been a founder myself, so I understand the challenges, the urgency,
-              and the need to make every technical decision count.</p>
-            <p>My approach is simple: <strong>clarity, speed, and real business outcomes</strong>. I cut through
-              complexity, focus on what matters, and ship quality code fast.</p>
-            <p>Whether you need a technical co-founder for your startup or an experienced engineer to rescue a
-              struggling product, I bring the expertise and dedication to get it done.</p>
+          <div class="ai-solution-card">
+            <div class="ai-solution-icon">👥</div>
+            <h3>Lead Automation</h3>
+            <p>
+              Automatically capture, qualify, and nurture leads across multiple channels. Our AI identifies high-intent
+              prospects and routes them to your team at the perfect moment.
+            </p>
+            <ul class="ai-feature-list">
+              <li>Multi-channel lead capture</li>
+              <li>Intelligent lead scoring</li>
+              <li>Automated follow-up sequences</li>
+              <li>CRM integration &amp; sync</li>
+            </ul>
           </div>
-          <div class="value-cards-row">
-            <div class="value-point">
-              <span class="value-dot"></span>
-              <div>
-                <div class="name">Full-Stack Expertise</div>
-                <div class="desc">Frontend to cloud infrastructure</div>
+
+          <div class="ai-solution-card">
+            <div class="ai-solution-icon ai-icon-blue">📞</div>
+            <h3>Cold Call AI Agent</h3>
+            <p>
+              Deploy AI-powered voice agents that sound natural, handle objections, and book qualified meetings. Scale
+              your outreach without scaling your team.
+            </p>
+            <ul class="ai-feature-list ai-list-blue">
+              <li>Natural conversation flow</li>
+              <li>Objection handling &amp; qualification</li>
+              <li>Meeting scheduling automation</li>
+              <li>Call analytics &amp; transcription</li>
+            </ul>
+          </div>
+
+          <div class="ai-solution-card">
+            <div class="ai-solution-icon">🎧</div>
+            <h3>AI Reception &amp; CRM Integration</h3>
+            <p>
+              Never miss a customer interaction. Our AI receptionist handles inquiries, books appointments, and updates
+              your CRM in real-time—connected to all your tools.
+            </p>
+            <ul class="ai-feature-list">
+              <li>24/7 customer support</li>
+              <li>Calendar &amp; booking integration</li>
+              <li>CRM auto-update &amp; logging</li>
+              <li>Multi-platform connectivity</li>
+            </ul>
+          </div>
+
+          <div class="ai-solution-card">
+            <div class="ai-solution-icon">🎯</div>
+            <h3>Outbound Sequencing Engine</h3>
+            <p>
+              End-to-end outbound infrastructure built around your ICP — intent capture, Clay-based enrichment,
+              and GPT-personalized multi-touch sequences that reach buyers the right way at the right time.
+            </p>
+            <ul class="ai-feature-list">
+              <li>ICP definition &amp; intent signal capture</li>
+              <li>Clay + Apollo / ZoomInfo enrichment</li>
+              <li>Email + LinkedIn + call sequencing</li>
+              <li>A/B testing &amp; conversion analytics</li>
+            </ul>
+          </div>
+
+          <div class="ai-solution-card">
+            <div class="ai-solution-icon ai-icon-blue">🏗️</div>
+            <h3>CRM &amp; Revenue Stack Build-out</h3>
+            <p>
+              Stand up a complete HubSpot or Salesforce environment from scratch—configured for your sales motion,
+              onboarding flows, and analytics that support fundraising and early revenue.
+            </p>
+            <ul class="ai-feature-list ai-list-blue">
+              <li>HubSpot / Salesforce setup &amp; configuration</li>
+              <li>Lead lifecycle, pipeline stages &amp; routing rules</li>
+              <li>Lead scoring rules &amp; automation triggers</li>
+              <li>Analytics dashboards &amp; CAC tracking</li>
+            </ul>
+          </div>
+
+          <div class="ai-solution-card">
+            <div class="ai-solution-icon">🔬</div>
+            <h3>Conversation Intelligence &amp; Deal Coaching</h3>
+            <p>
+              Integrate Gong call intelligence into your GTM workflows to surface deal risk signals and winning
+              conversation patterns—fed back automatically into pipeline scoring and outreach sequences.
+            </p>
+            <ul class="ai-feature-list">
+              <li>Gong setup &amp; workflow integration</li>
+              <li>Deal risk signals into Salesforce scoring</li>
+              <li>Winning talk-track extraction &amp; rep coaching</li>
+              <li>Continuous performance feedback loops</li>
+            </ul>
+          </div>
+
+          <div class="ai-solution-card">
+            <div class="ai-solution-icon ai-icon-blue">📣</div>
+            <h3>Demand Gen &amp; Attribution</h3>
+            <p>
+              Full-funnel demand gen setup—ad campaigns, landing pages, form-to-CRM pipelines, and
+              content-to-pipeline attribution so leadership knows exactly what's driving revenue.
+            </p>
+            <ul class="ai-feature-list ai-list-blue">
+              <li>Search, display &amp; social ad campaigns</li>
+              <li>Landing pages &amp; conversion optimization</li>
+              <li>Form-to-CRM &amp; sequence automation</li>
+              <li>Multi-touch attribution &amp; CAC reporting</li>
+            </ul>
+          </div>
+
+          <div class="ai-solution-card">
+            <div class="ai-solution-icon">🔗</div>
+            <h3>CRM / ERP / CDP Unification</h3>
+            <p>
+              Consolidate disconnected tools into a single data model. Quoting, order management, partner ops,
+              and GTM—all speaking to each other with no manual copy-paste between systems.
+            </p>
+            <ul class="ai-feature-list">
+              <li>HubSpot + Salesforce + Odoo integration</li>
+              <li>Segment / CDP data pipeline setup</li>
+              <li>API-first automation (n8n, AWS, Terraform)</li>
+              <li>Single source of truth for GTM &amp; ops</li>
+            </ul>
+          </div>
+
+          <div class="ai-solution-card">
+            <div class="ai-solution-icon ai-icon-blue">📊</div>
+            <h3>Revenue Dashboards &amp; BI Pipelines</h3>
+            <p>
+              Real-time visibility from first ad click through customer success handoff. GCP-powered analytics
+              pipelines that cut reporting lag from days to same-day.
+            </p>
+            <ul class="ai-feature-list ai-list-blue">
+              <li>Pipeline health &amp; revenue forecast dashboards</li>
+              <li>CAC, LTV &amp; multi-touch attribution</li>
+              <li>GCP / BigQuery data pipelines</li>
+              <li>Executive &amp; board-level reporting</li>
+            </ul>
+          </div>
+
+          <div class="ai-solution-card">
+            <div class="ai-solution-icon">🚀</div>
+            <h3>GTM Infrastructure &amp; DevOps</h3>
+            <p>
+              API-first automation stacks that cut manual ops by 10–15 hrs/week and shorten product launch
+              timelines by 2–3 weeks. CI/CD, Docker, Terraform—built for GTM velocity.
+            </p>
+            <ul class="ai-feature-list">
+              <li>n8n &amp; Make automation workflows</li>
+              <li>AWS / GCP deployment &amp; Terraform IaC</li>
+              <li>CI/CD pipelines via GitHub Actions</li>
+              <li>REST API integrations &amp; webhooks</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="ai-solutions-cta">
+          <p>All solutions integrate seamlessly with your existing CRM, calendar, communication tools, and workflows.</p>
+          <a href="#cta" class="btn btn-secondary">Explore Integration Options →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section section-alt" id="challenges">
+      <div class="container-narrow">
+        <div class="section-header">
+          <h2 class="section-title">Common Challenges We Solve</h2>
+          <p class="section-intro">These operational roadblocks are costing you time, money, and growth opportunities.</p>
+        </div>
+        <div class="challenges-list">
+
+          <div class="challenge-item">
+            <strong>⚠ Disconnected systems &amp; manual reporting</strong>
+            <p>Teams waste hours copying data between tools and creating reports manually, leading to delays and errors.</p>
+          </div>
+
+          <div class="challenge-item">
+            <strong>⚠ Limited visibility into performance</strong>
+            <p>Without real-time insights, leaders struggle to identify issues early and capitalize on opportunities.</p>
+          </div>
+
+          <div class="challenge-item">
+            <strong>⚠ Slow, reactive decision-making</strong>
+            <p>Decisions based on outdated data result in missed opportunities and inefficient resource allocation.</p>
+          </div>
+
+          <div class="challenge-item">
+            <strong>⚠ Inconsistent data quality</strong>
+            <p>Poor data hygiene creates confusion, undermines trust, and makes it difficult to measure true performance.</p>
+          </div>
+
+          <div class="challenge-item">
+            <strong>⚠ Slow speed-to-lead killing conversion</strong>
+            <p>Leads going cold because follow-up is manual and delayed. High-intent prospects contacted days after they were ready to buy.</p>
+          </div>
+
+          <div class="challenge-item">
+            <strong>⚠ SDR headcount blocking pipeline growth</strong>
+            <p>Scaling outreach volume by hiring more SDRs—when AI automation can deliver the same output at a fraction of the cost.</p>
+          </div>
+
+          <div class="challenge-item">
+            <strong>⚠ No attribution on marketing spend</strong>
+            <p>Campaigns running with no visibility into what's actually generating pipeline. Budget wasted on channels that don't convert.</p>
+          </div>
+
+          <div class="challenge-item">
+            <strong>⚠ CRM data nobody trusts</strong>
+            <p>Reps skip logging because it's manual. Leadership can't forecast because the data is stale. The whole GTM motion suffers.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how-it-works">
+      <div class="container-wide">
+        <div class="section-header">
+          <h2 class="section-title">How It Works</h2>
+          <p class="section-intro">A proven process that delivers measurable results and sustainable improvements.</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-num">01</span>
+            <h3>Assess</h3>
+            <p>Review your data landscape, tools, and workflows to identify opportunities and pain points.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">02</span>
+            <h3>Design</h3>
+            <p>Create a tailored AI and automation strategy aligned with your business goals and growth targets.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">03</span>
+            <h3>Build</h3>
+            <p>Implement dashboards, integrations, and automations that deliver immediate value and insights.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">04</span>
+            <h3>Optimize</h3>
+            <p>Continuously improve systems based on feedback and evolving business needs for sustained growth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="capabilities">
+      <div class="container-wide">
+        <div class="section-header">
+          <h2 class="section-title">Core Capabilities</h2>
+          <p class="section-intro">Leveraging proven expertise to drive performance and revenue growth.</p>
+        </div>
+        <div class="capabilities-grid">
+
+          <div class="capability-item">
+            <div class="capability-icon">🗄</div>
+            <div>
+              <h3>Data analysis &amp; performance metrics</h3>
+              <p>Transform raw data into meaningful insights</p>
+            </div>
+          </div>
+
+          <div class="capability-item">
+            <div class="capability-icon">📐</div>
+            <div>
+              <h3>Dashboard customization</h3>
+              <p>Build real-time views tailored to your KPIs</p>
+            </div>
+          </div>
+
+          <div class="capability-item">
+            <div class="capability-icon">🔗</div>
+            <div>
+              <h3>Automation &amp; integrations</h3>
+              <p>Connect your tools and eliminate manual tasks</p>
+            </div>
+          </div>
+
+          <div class="capability-item">
+            <div class="capability-icon">📊</div>
+            <div>
+              <h3>Reporting &amp; insights</h3>
+              <p>Deliver actionable intelligence to stakeholders</p>
+            </div>
+          </div>
+
+          <div class="capability-item">
+            <div class="capability-icon">📈</div>
+            <div>
+              <h3>Process optimization</h3>
+              <p>Streamline workflows for maximum efficiency</p>
+            </div>
+          </div>
+
+          <div class="capability-item">
+            <div class="capability-icon">🎯</div>
+            <div>
+              <h3>Lead scoring &amp; intent capture</h3>
+              <p>Identify and prioritize in-market prospects before competitors do</p>
+            </div>
+          </div>
+
+          <div class="capability-item">
+            <div class="capability-icon">📣</div>
+            <div>
+              <h3>Outbound &amp; demand gen</h3>
+              <p>Full-funnel campaigns from ad click to booked meeting</p>
+            </div>
+          </div>
+
+          <div class="capability-item">
+            <div class="capability-icon">🏗️</div>
+            <div>
+              <h3>CRM build-out &amp; hygiene</h3>
+              <p>Clean, trusted data from day one — routing, scoring, lifecycle automation</p>
+            </div>
+          </div>
+
+          <div class="capability-item">
+            <div class="capability-icon">🏆</div>
+            <div>
+              <h3>Revenue forecasting</h3>
+              <p>Pipeline velocity models grounded in clean CRM data and conversion rates</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="authority-block" style="margin-top: 3rem;">
+          <div class="authority-icon">🏆</div>
+          <div class="authority-content">
+            <h2 class="authority-title">Built by a GTM engineer with 20 years of hands-on experience — from SDR and AE to demand gen, revenue ops, and systems architecture.</h2>
+            <ul class="authority-list">
+              <li>Data-driven decision support</li>
+              <li>Operational performance analysis</li>
+              <li>Automation &amp; reporting efficiency</li>
+              <li>Scalable, maintainable solutions</li>
+              <li>HubSpot · Salesforce · Clay · Gong · Apollo · ZoomInfo · n8n · AWS · GCP</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section ai-solutions" id="results">
+      <div class="container-wide">
+        <div class="section-header">
+          <h2 class="section-title">Proven Results</h2>
+          <p class="section-intro">Not theoretical — work delivered for real clients and operators, with numbers to match.</p>
+        </div>
+        <div class="ai-cards-grid">
+
+          <div class="ai-solution-card">
+            <div class="ai-solution-icon">🤖</div>
+            <h3>AI SDR Pipeline</h3>
+            <p>Built Clay + GPT + HubSpot pipelines processing 300–500 leads/month — eliminating the need for a dedicated SDR hire at multiple portfolio companies.</p>
+            <p><strong>↓ Speed-to-lead: days → minutes</strong></p>
+          </div>
+
+          <div class="ai-solution-card">
+            <div class="ai-solution-icon ai-icon-blue">📦</div>
+            <h3>Supply Chain Platform</h3>
+            <p>Replaced a manual, error-prone workflow with a cloud-native platform. Integrated shipping, design, and manufacturing APIs to automate order tracking end-to-end.</p>
+            <p><strong>↑ Order volume +30–40% &nbsp;·&nbsp; ↓ Fulfillment time −60%</strong></p>
+          </div>
+
+          <div class="ai-solution-card">
+            <div class="ai-solution-icon">📊</div>
+            <h3>Real-Time Analytics Pipeline</h3>
+            <p>GCP-powered analytics pipelines gave GTM and ops leadership accurate pipeline visibility for the first time at a multi-location B2B operation.</p>
+            <p><strong>↓ Reporting lag: 3–4 days → same-day</strong></p>
+          </div>
+
+          <div class="ai-solution-card">
+            <div class="ai-solution-icon ai-icon-blue">📉</div>
+            <h3>Churn Reduction</h3>
+            <p>Instrumented end-to-end event tracking across the trial user journey, enabling growth experiments that connected feature releases directly to retention metrics.</p>
+            <p><strong>↓ Monthly churn: 36% → 14%</strong></p>
+          </div>
+
+          <div class="ai-solution-card">
+            <div class="ai-solution-icon">⚙️</div>
+            <h3>CRM Automation</h3>
+            <p>Lead routing, lifecycle triggers, scoring rules, and pipeline workflows that eliminated manual data entry from first ad click through customer success handoff.</p>
+            <p><strong>↓ Manual ops: 15–20 hrs/week saved</strong></p>
+          </div>
+
+          <div class="ai-solution-card">
+            <div class="ai-solution-icon ai-icon-blue">🚀</div>
+            <h3>$15M ARR Scaled</h3>
+            <p>Joined a 4-person fintech startup as employee #1. Owned SDR, AE, demand gen, CRM systems, and BI dashboards through every stage of growth.</p>
+            <p><strong>↑ $15M ARR &nbsp;·&nbsp; 4 → 200+ employees</strong></p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container-wide">
+        <div class="about-grid">
+          <div class="about-image-wrap">
+            <img src="/images/k1m.png" alt="Keyvan (K1) — Tech &amp; GTM Engineer" class="about-image" />
+          </div>
+          <div class="about-content">
+            <span class="about-badge">About Me</span>
+            <h2 class="section-title">Building products and revenue systems is what I do best.</h2>
+            <div class="about-text">
+              <p>My name is <strong>Keyvan (K1)</strong> and I'm a tech and GTM engineer with <strong>20+ years of
+                  experience</strong> — building products across industries and owning the full revenue funnel from the ground up.</p>
+              <p>I started as an SDR — cold outreach, no playbook, no brand recognition — then moved to AE, demand gen, and revenue ops. Along the way I kept building the systems that made each of those roles faster and more repeatable. That's what GTM Engineering is: I just didn't have a name for it until recently.</p>
+              <p>What drives me is the <strong>0 → 1 journey</strong>: taking an idea and transforming it into something
+                real that people use and love. I've been a founder myself, so I understand the challenges, the urgency,
+                and the need to make every technical and commercial decision count.</p>
+              <p>My approach is simple: <strong>clarity, speed, and real business outcomes</strong>. I cut through
+                complexity, focus on what matters, and ship — whether that's quality code or a revenue system that actually runs in the field.</p>
+            </div>
+            <div class="value-cards-row">
+              <div class="value-point">
+                <span class="value-dot"></span>
+                <div>
+                  <div class="name">Full-Stack Expertise</div>
+                  <div class="desc">Frontend to cloud infrastructure</div>
+                </div>
+              </div>
+              <div class="value-point">
+                <span class="value-dot"></span>
+                <div>
+                  <div class="name">GTM Engineering</div>
+                  <div class="desc">SDR → AE → systems builder</div>
+                </div>
+              </div>
+              <div class="value-point">
+                <span class="value-dot"></span>
+                <div>
+                  <div class="name">Startup Experience</div>
+                  <div class="desc">Founder mindset &amp; hustle</div>
+                </div>
+              </div>
+              <div class="value-point">
+                <span class="value-dot"></span>
+                <div>
+                  <div class="name">Modern Stack</div>
+                  <div class="desc">AI tools &amp; latest tech</div>
+                </div>
+              </div>
+              <div class="value-point">
+                <span class="value-dot"></span>
+                <div>
+                  <div class="name">Revenue Operator</div>
+                  <div class="desc">$15M ARR scaled from 4 people</div>
+                </div>
+              </div>
+              <div class="value-point">
+                <span class="value-dot"></span>
+                <div>
+                  <div class="name">Clear Communication</div>
+                  <div class="desc">No jargon, just results</div>
+                </div>
               </div>
             </div>
-            <div class="value-point">
-              <span class="value-dot"></span>
-              <div>
-                <div class="name">Startup Experience</div>
-                <div class="desc">Founder mindset & hustle</div>
-              </div>
-            </div>
-            <div class="value-point">
-              <span class="value-dot"></span>
-              <div>
-                <div class="name">Modern Stack</div>
-                <div class="desc">AI tools & latest tech</div>
-              </div>
-            </div>
-            <div class="value-point">
-              <span class="value-dot"></span>
-              <div>
-                <div class="name">Clear Communication</div>
-                <div class="desc">No jargon, just results</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact CTA -->
-  <section class="section cta-section" id="contact">
-    <div class="container">
-      <h2 class="cta-title">Have an idea?<br />Let's build it.</h2>
-      <p class="cta-subtitle">Whether you're starting from scratch or need help scaling, I'm here to turn your vision
-        into reality.</p>
-      <div class="cta-links">
-        <a href="https://meetings-na3.hubspot.com/keyvan?uuid=7f6105be-cff2-4f01-92b9-739ed12ff266" target="_blank"
-          rel="noopener noreferrer" class="btn" id="cta-button">Book a Call →</a>
+    <section class="section cta-section" id="cta">
+      <div class="container">
+        <h2 class="cta-title">Ready to Improve Performance and Revenue?</h2>
+        <p class="cta-subtitle">
+          Let's discuss how AI-driven automation and insights can transform your business operations.
+        </p>
+        <div class="cta-links">
+          <a href="https://meetings-na3.hubspot.com/keyvan?uuid=7f6105be-cff2-4f01-92b9-739ed12ff266" target="_blank"
+            rel="noopener noreferrer" class="btn" id="cta-button">Book a Strategy Call →</a>
+        </div>
+        <p class="cta-note">No commitment. Focused on clarity and results.</p>
       </div>
-      <div class="contact-options">
-        <a href="mailto:hi@k1m.dev" class="contact-link">
-          <span class="contact-icon">✉</span>
-          <span>hi@k1m.dev</span>
-        </a>
-        <a href="https://linkedin.com/in/keyvan-montazeri" target="_blank" rel="noopener noreferrer"
-          class="contact-link">
-          <span class="contact-icon">in</span>
-          <span>LinkedIn Profile</span>
-        </a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
+    <section class="section section-alt" id="latest-from-blog" aria-labelledby="latest-blog-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="latest-blog-heading">Latest from the blog</h2>
+          <p class="section-intro">Notes on GTM engineering, automation, intent, and scaling pipeline.</p>
+        </div>
+        <div class="blog-list">
+          <article class="blog-card">
+            <a href="/blog/Stop-Churn-Before-It-Starts-Talking.html" class="blog-card-link">
+              <div class="blog-card-image">
+                <img src="/images/Stop%20Churn%20Before%20It%20Starts%20Talking.png"
+                  alt="Stop churn — funnel customer signals through proactive detection toward stronger relationships" />
+              </div>
+              <div class="blog-card-content">
+                <h3 class="blog-card-title">Stop Churn Before It Starts Talking</h3>
+                <p class="blog-card-summary">Wire Gong, ChurnZero, n8n, and Slack into a real-time early-warning system that surfaces at-risk accounts before your CSMs even pick up the phone.</p>
+                <div class="blog-card-meta">
+                  <span>👤 Keyvan Montazeri</span>
+                  <span>⏱ 12 min read</span>
+                  <span>📅 May 4, 2026</span>
+                </div>
+              </div>
+              <span class="blog-card-arrow">→</span>
+            </a>
+          </article>
+          <article class="blog-card">
+            <a href="/blog/Signal-Capture-From-Gong-Call-to-CRM-Action-in-Under-60-Seconds.html" class="blog-card-link">
+              <div class="blog-card-image">
+                <img src="/images/signal_capture_article.png"
+                  alt="Signal capture pipeline from Gong through GPT-4o and n8n to Salesforce" />
+              </div>
+              <div class="blog-card-content">
+                <h3 class="blog-card-title">Signal Capture: From Gong Call to CRM Action in Under 60 Seconds</h3>
+                <p class="blog-card-summary">Wire Gong transcripts, GPT-4o extraction, and n8n into Salesforce write-back — tasks, opportunity updates, and sequences.</p>
+                <div class="blog-card-meta">
+                  <span>👤 Keyvan Montazeri</span>
+                  <span>⏱ 10 min read</span>
+                  <span>📅 April 29, 2026</span>
+                </div>
+              </div>
+              <span class="blog-card-arrow">→</span>
+            </a>
+          </article>
+          <article class="blog-card">
+            <a href="/blog/How-to-Capture-Visitor-Intent-Using-Clay-ZoomInfo-and-HubSpot.html" class="blog-card-link">
+              <div class="blog-card-image">
+                <img src="/images/How-to-Capture-Visitor-Intent-Using-Clay-ZoomInfo-and-HubSpot.jpg"
+                  alt="Capture visitor intent and buying signals with Clay, ZoomInfo, and HubSpot — pipeline illustration" />
+              </div>
+              <div class="blog-card-content">
+                <h3 class="blog-card-title">How to Capture Visitor Intent Using Clay, ZoomInfo, and HubSpot</h3>
+                <p class="blog-card-summary">Combine HubSpot, ZoomInfo, and Clay to track behavior, enrich accounts, score intent, and turn anonymous traffic into qualified leads.</p>
+                <div class="blog-card-meta">
+                  <span>👤 Keyvan Montazeri</span>
+                  <span>⏱ 11 min read</span>
+                  <span>📅 April 9, 2026</span>
+                </div>
+              </div>
+              <span class="blog-card-arrow">→</span>
+            </a>
+          </article>
+        </div>
+        <div class="ai-solutions-cta" style="margin-top: 2rem;">
+          <a href="/blog/" class="btn btn-secondary">View all articles →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
   <footer>
     <div class="footer-inner">
       <div>
         <div class="footer-brand">k1m.dev</div>
-        <div class="footer-copy">Tech Engineer & MVP Builder</div>
+        <div class="footer-copy">Tech Engineer &amp; MVP Builder</div>
       </div>
       <div class="footer-links">
         <a href="https://github.com/goolz" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
@@ -521,7 +724,6 @@
 
   <script src="script.js"></script>
   <script>
-    // Theme toggle
     (function () {
       var btn = document.getElementById('theme-toggle');
       var html = document.documentElement;
@@ -552,9 +754,7 @@
       }
     })();
   </script>
-  <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-na3.hs-scripts.com/342879697.js"></script>
-  <!-- End of HubSpot Embed Code -->
 </body>
 
 </html>

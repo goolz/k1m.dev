@@ -50,16 +50,16 @@
 
 ## Key Pages
 
-- **Home**: https://k1m.dev
-- **Blog (recent)**: https://k1m.dev/blog/Does-Having-a-CMS-Make-Sense-Anymore-Now-That-We-Have-AI.html
-- **Blog (example)**: https://k1m.dev/blog/How-to-Build-a-Modern-Landing-Page.html
-- **Growth Revenue**: https://k1m.dev/ai-revenue.html
-- **Book a Call**: Google Calendar appointments (link on site contact section)
+- **Home (GTM engineering & revenue growth)**: https://k1m.dev/
+- **Tech Engineer profile / MVP builder**: https://k1m.dev/tech-engineer.html
+- **Blog**: https://k1m.dev/blog/
+- **Blog (recent)**: https://k1m.dev/blog/Stop-Churn-Before-It-Starts-Talking.html
+- **Book a Call**: HubSpot meetings link on homepage (`/`) and Tech Engineer page
 
 ## Contact
 
 - **Email**: hi@k1m.dev
-- **Book a call**: Via link in contact section at https://k1m.dev/#contact
+- **Book a call**: Via HubSpot link in CTA on https://k1m.dev/#cta or https://k1m.dev/tech-engineer.html#contact
 - **LinkedIn**: https://linkedin.com/in/keyvan-montazeri
 
 ## About (Summary)
