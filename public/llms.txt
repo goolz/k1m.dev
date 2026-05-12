@@ -53,7 +53,7 @@
 - **Home (GTM engineering & revenue growth)**: https://k1m.dev/
 - **Tech Engineer profile / MVP builder**: https://k1m.dev/tech-engineer.html
 - **Blog**: https://k1m.dev/blog/
-- **Blog (recent)**: https://k1m.dev/blog/Stop-Churn-Before-It-Starts-Talking.html
+- **Blog (recent)**: https://k1m.dev/blog/Build-a-Lead-Machine-That-Gets-Smarter-Every-Week.html
 - **Book a Call**: HubSpot meetings link on homepage (`/`) and Tech Engineer page
 
 ## Contact
