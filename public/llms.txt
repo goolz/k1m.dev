@@ -1,72 +1,30 @@
-# k1m.dev — Tech Engineer & MVP Builder
+# k1m.dev — Keyvan Montazeri, GTM Engineer & AI Automation Consultant
 
-> Keyvan (K1) helps startups and companies design, build, and scale MVPs using modern technologies, automation, and AI-driven solutions that turn ideas into measurable business growth. 18+ years of experience; 50+ products built.
+## Who I am
+Keyvan Montazeri (also known as K1) is a GTM engineer and AI automation consultant with 20+ years of experience. I build AI-driven revenue systems, CRM infrastructure, and automation workflows for B2B startups and scale-ups.
 
-## Site & Person
+## What I do
+- GTM Engineering: building the technical systems that power a company's revenue motion
+- AI Lead Generation: Clay + GPT + HubSpot pipelines processing 300–500 leads/month
+- CRM Build-out: HubSpot and Salesforce setup, lead scoring, lifecycle automation
+- Revenue Dashboards: GCP/BigQuery pipelines, real-time pipeline visibility
+- Outbound Sequencing: ICP definition, intent capture, multi-touch AI-personalized sequences
+- Conversation Intelligence: Gong integration, deal risk signals, rep coaching
+- GTM DevOps: n8n, Make, AWS, Terraform, CI/CD for sales and marketing infrastructure
 
-- **Site**: https://k1m.dev
-- **Tagline**: Build Smarter. Launch Faster. Grow Revenue.
-- **Name**: Keyvan (K1)
-- **Role**: Tech Engineer · Scalable Systems & MVPs
-- **Email**: hi@k1m.dev
-- **LinkedIn**: https://linkedin.com/in/keyvan-montazeri
-- **GitHub**: https://github.com/goolz
+## Key results
+- Scaled a fintech startup from 4 employees to 200+ and $15M ARR as employee #1
+- Reduced monthly churn from 36% to 14% via trial event tracking and growth experiments
+- Cut fulfillment time by 60% and increased order volume 30–40% via supply chain automation
+- Saved 15–20 hrs/week of manual ops via CRM lifecycle automation
+- Reduced reporting lag from 3–4 days to same-day via GCP analytics pipelines
 
-## What He Does
-
-- **MVP Architecture & Development** — Turn ideas into working products fast; validate concepts and attract early users.
-- **Full-Stack & Cloud Engineering** — End-to-end from responsive frontends to scalable cloud infrastructure.
-- **API, SaaS & Integration Design** — Clean APIs, third-party integrations, SaaS architectures.
-- **Fixing, Scaling & Modernizing** — Technical debt, performance, legacy system modernization.
-
-## How He Works
-
-1. **Discovery & Idea Validation** — Understand vision, users, goals; validate assumptions and define MVP scope.
-2. **MVP Architecture & Planning** — Technical architecture, tech stack, roadmap balancing speed and quality.
-3. **Build, Iterate & Launch** — Rapid development, weekly check-ins, feedback loops until launch.
-4. **Scale & Optimize** — Post-launch scaling, performance optimization, growth-oriented features.
-
-## Skills & Expertise (Summary)
-
-- **AI & Modern**: GenAI, OpenAI/GPT, LLM fine-tuning, Hugging Face, AI workflow automation, AI telephony (Twilio GPT, RetellAI).
-- **Backend & Full Stack**: Node.js, Python, TypeScript, JavaScript, NestJS, Express, Next.js, React, Angular, React Native, Expo.
-- **API & Integration**: REST, Webhooks, event-driven, OAuth 2.0, WebSockets, RabbitMQ, Redis Pub/Sub, GraphQL.
-- **Cloud & Infra**: AWS (Lambda, ECS, EC2, S3, API Gateway, DynamoDB, RDS, etc.), Docker, Kubernetes, CI/CD, Terraform.
-- **Databases**: PostgreSQL, MongoDB, MySQL, MS SQL Server, DynamoDB, Redis.
-- **Architecture**: Microservices, distributed systems, multi-tenant SaaS, high availability, scalable design.
-- **Automation**: n8n, Zapier, Make.com, Activepieces, workflow orchestration.
-- **CRM / GTM**: HubSpot, Salesforce, Odoo, lead routing, sales/marketing automation, PLG.
-- **Data & Analytics**: SQL, GA4, Tableau, Power BI, Metabase, Mixpanel, Amplitude, funnel/revenue attribution.
-- **Other**: TDD, Jest, security/compliance, pre-sales/solution scoping, Agile, team mentoring.
-
-## Featured Projects
-
-- **Crewa.app** (https://crewa.app) — Recent MVP. “Find Your Running Crew in Toronto”: ID-verified local runners, same pace/schedule, group runs of 2–5; Toronto-first, expanding. React, Next.js, Serverless, DynamoDB, Stripe. Role: Recent MVP · Full-Stack Engineer.
-- **TotsBuds.com** (https://totsbuds.com) — Recent MVP. Companion for children’s growth and learning; tools for educators and parents. No AI; no private data gathered for children; privacy-first. React Native, Node.js, AWS, PostgreSQL, Redis. Role: Recent MVP · MVP Builder & Lead Engineer.
-- **Fintech Startup Platform** — Payment processing, financial management; compliance & security. TypeScript, Microservices, AWS Lambda, PostgreSQL. Role: Senior Architect.
-- **Property Management SaaS** — Tenant portals, maintenance, billing. React, Node.js, MongoDB, Docker, CI/CD. Role: MVP Builder.
-- **Dating App Startup** — AI matching, real-time chat, video. React Native, GraphQL, AWS, WebRTC, OpenAI. Role: Full-Stack Engineer.
-- **AI-Powered Analytics Tool** — BI with GenAI insights and predictive analytics. Next.js, Python, OpenAI, Vector DB, AWS. Role: Technical Lead.
-
-## Key Pages
-
-- **Home (GTM engineering & revenue growth)**: https://k1m.dev/
-- **Tech Engineer profile / MVP builder**: https://k1m.dev/tech-engineer.html
-- **Blog**: https://k1m.dev/blog/
-- **Blog (recent)**: https://k1m.dev/blog/Build-a-Lead-Machine-That-Gets-Smarter-Every-Week.html
-- **Book a Call**: HubSpot meetings link on homepage (`/`) and Tech Engineer page
+## Important pages
+- Homepage: https://k1m.dev/
+- Tech Engineer profile: https://k1m.dev/tech-engineer.html
+- Blog: https://k1m.dev/blog/
 
 ## Contact
-
-- **Email**: hi@k1m.dev
-- **Book a call**: Via HubSpot link in CTA on https://k1m.dev/#cta or https://k1m.dev/tech-engineer.html#contact
-- **LinkedIn**: https://linkedin.com/in/keyvan-montazeri
-
-## About (Summary)
-
-Keyvan is a tech engineer with 18+ years of experience and a founder mindset. He focuses on the 0→1 journey: turning ideas into products people use. Values: clarity, speed, real business outcomes; full-stack expertise, startup experience, modern stack (including AI), and clear communication.
-
----
-
-*Last updated: March 2026*
-*For the most current information, visit https://k1m.dev*
+Email: hi@k1m.dev
+LinkedIn: https://linkedin.com/in/keyvan-montazeri
+GitHub: https://github.com/goolz

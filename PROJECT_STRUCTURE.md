@@ -53,7 +53,7 @@ There is **no bundler** for pages: edit HTML directly. Styles and behavior live 
 
 - **Pretty paths**: Use paths like `/blog/` for the listing (`blog/index.html`).
 - **Articles**: Flat files under `/blog/<Article-Slug>.html` (slug matches filename).
-- **Asset URLs**: Root-relative, e.g. `href="/styles.css"`, `src="/images/foo.png"` from pages in `public/` root; from `public/blog/*.html` use `href="../styles.css"` where applicable for sibling consistency with this repo (blog pages link `../styles.css` and `../script.js`).
+- **Asset URLs**: Root-relative, e.g. `href="/styles.css"`, `src="/images/foo.webp"` from pages in `public/` root; from `public/blog/*.html` use `href="../styles.css"` where applicable for sibling consistency with this repo (blog pages link `../styles.css` and `../script.js`).
 - **No framework router**: Each URL is a real file (or `index.html` in a folder).
 
 ---
