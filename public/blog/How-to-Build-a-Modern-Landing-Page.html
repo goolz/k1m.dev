@@ -23,6 +23,7 @@
     content="Design once in Figma, deploy automatically to Cloudflare Pages — no code required." />
   <meta name="twitter:image" content="https://k1m.dev/images/How-to-Build-a-Modern-Landing-Page.webp" />
   <link rel="stylesheet" href="../styles.css" />
+  <script src="/cookie-consent-init.min.js"></script>
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -33,6 +34,7 @@
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-MG24GTB4');</script>
   <!-- End Google Tag Manager -->
+  <link rel="stylesheet" href="/cookie-consent.min.css" />
   <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="1lpyaBDHOTrw0VgNk" data-version="062024"></script>
 </head>
 
@@ -413,7 +415,39 @@ Build output directory: dist</pre>
     </div>
   </footer>
 
-  <script src="../../script.js"></script>
+  <dialog
+    class="cookie-consent-dialog"
+    id="cookie-consent-dialog"
+    aria-labelledby="cookie-consent-title"
+    aria-describedby="cookie-consent-desc">
+    <div class="cookie-consent-shell">
+      <div class="cookie-consent-grid">
+        <div class="cookie-consent-copy">
+          <div class="cookie-consent-badge">Privacy · Cookies</div>
+          <h2 class="cookie-consent-title" id="cookie-consent-title">Cookies &amp; analytics</h2>
+          <p class="cookie-consent-body" id="cookie-consent-desc">
+            We use cookies and similar technologies for site functionality, analytics, and tags loaded through Google Tag Manager. Accept optional cookies, or decline non-essential use. This notice is not legal advice—read our Privacy page and align with applicable laws.
+          </p>
+          <p class="cookie-consent-ca">
+            If you are in California or another U.S. state with consumer privacy laws, you may have additional choices; see our Privacy notice.
+          </p>
+        </div>
+        <div class="cookie-consent-aside">
+          <div class="cookie-consent-actions">
+            <button type="button" class="cookie-consent-btn-decline" id="cookie-consent-decline">
+              Decline optional cookies
+            </button>
+            <button type="button" class="cookie-consent-btn-accept" id="cookie-consent-accept">Accept</button>
+          </div>
+          <p class="cookie-consent-links"><a href="/privacy.html">Privacy</a></p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="/cookie-consent-ui.min.js" defer></script>
+
+  <script src="../script.js"></script>
   <script>
     // Theme toggle
     (function () {

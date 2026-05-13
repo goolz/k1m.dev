@@ -1,0 +1,163 @@
+/* Cookie consent bottom sheet — optional theme vars with fallbacks */
+:root {
+  --cc-ink: var(--ink, #0f172a);
+  --cc-surface: var(--surface, #111827);
+  --cc-text: var(--text, #e5e7eb);
+  --cc-muted: var(--muted, #9ca3af);
+  --cc-rim: var(--rim, rgba(139, 92, 246, 0.35));
+  --cc-white: var(--white, #f9fafb);
+  --cc-accent: var(--gold, #a78bfa);
+}
+
+.cookie-consent-dialog {
+  position: fixed;
+  inset: auto 0 0 0;
+  margin: 0 auto;
+  max-width: 100%;
+  width: min(960px, 100%);
+  padding: 0;
+  border: none;
+  border-radius: 0.75rem 0.75rem 0 0;
+  background: var(--cc-surface);
+  color: var(--cc-text);
+  box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.45);
+  z-index: 10000;
+}
+
+.cookie-consent-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.cookie-consent-shell {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.cookie-consent-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .cookie-consent-grid {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 2rem;
+  }
+}
+
+.cookie-consent-badge {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cc-muted);
+  margin-bottom: 0.5rem;
+}
+
+.cookie-consent-title {
+  font-family: ui-serif, Georgia, "Times New Roman", serif;
+  font-size: clamp(1.125rem, 2.5vw, 1.35rem);
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: var(--cc-white);
+}
+
+.cookie-consent-body,
+.cookie-consent-ca {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--cc-muted);
+  margin: 0 0 0.5rem;
+}
+
+.cookie-consent-ca {
+  margin-bottom: 0;
+  font-size: 0.8125rem;
+}
+
+.cookie-consent-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .cookie-consent-aside {
+    align-items: flex-end;
+    min-width: 220px;
+  }
+}
+
+.cookie-consent-actions {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  .cookie-consent-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+
+.cookie-consent-btn-decline,
+.cookie-consent-btn-accept {
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: 1px solid var(--cc-rim);
+  transition: opacity 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.cookie-consent-btn-decline {
+  background: transparent;
+  color: var(--cc-text);
+}
+
+.cookie-consent-btn-decline:hover {
+  border-color: var(--cc-muted);
+}
+
+.cookie-consent-btn-accept {
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  color: #fff;
+  border-color: transparent;
+}
+
+.cookie-consent-btn-accept:hover {
+  opacity: 0.92;
+}
+
+.cookie-consent-links {
+  margin: 0;
+  font-size: 0.8125rem;
+}
+
+.cookie-consent-links a {
+  color: var(--cc-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+html.light :root {
+  --cc-ink: #0f172a;
+  --cc-surface: #ffffff;
+  --cc-text: #111827;
+  --cc-muted: #4b5563;
+  --cc-rim: #e5e7eb;
+  --cc-white: #111827;
+}
+
+html.light .cookie-consent-dialog {
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.12);
+}
+
+html.light .cookie-consent-dialog::backdrop {
+  background: rgba(15, 23, 42, 0.25);
+}
