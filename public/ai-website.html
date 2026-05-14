@@ -38,160 +38,165 @@
   <link rel="stylesheet" href="/cookie-consent.min.css" />
 
   <style>
-    /* ── Portfolio tilt cards ───────────────────────────────────── */
+    /* ── Portfolio browser mockups ──────────────────────────────── */
     .folio-section {
       padding: 5rem 0;
-      background: transparent;
     }
 
     .folio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+      gap: 2.5rem;
       margin-top: 3rem;
     }
 
-    /* Outer wrapper preserves layout space; inner wrapper gets transformed */
+    @media (max-width: 560px) {
+      .folio-grid { grid-template-columns: 1fr; }
+    }
+
     .folio-card {
-      perspective: 900px;
-      cursor: pointer;
-    }
-
-    .folio-card-inner {
-      position: relative;
-      border-radius: 1rem;
+      border-radius: 0.875rem;
       overflow: hidden;
-      background: rgba(17, 24, 39, 0.7);
       border: 1px solid #1f2937;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      min-height: 320px;
-      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.2s ease;
-      will-change: transform;
-      transform-style: preserve-3d;
+      background: #0d1117;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
 
-    .folio-card:hover .folio-card-inner {
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(139, 92, 246, 0.35);
-      border-color: rgba(139, 92, 246, 0.45);
+    .folio-card:hover {
+      box-shadow: 0 20px 50px rgba(0,0,0,0.55);
     }
 
-    /* Glare overlay */
-    .folio-shine {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      border-radius: inherit;
-      opacity: 0;
-      transition: opacity 0.2s ease;
-      z-index: 2;
-    }
+    .folio-card[data-accent="amber"]  { border-top: 3px solid #f59e0b; }
+    .folio-card[data-accent="blue"]   { border-top: 3px solid #3b82f6; }
+    .folio-card[data-accent="green"]  { border-top: 3px solid #10b981; }
+    .folio-card[data-accent="violet"] { border-top: 3px solid #8b5cf6; }
 
-    /* Accent bar at top of each card */
-    .folio-accent {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      border-radius: 1rem 1rem 0 0;
-    }
+    .folio-card[data-accent="amber"]:hover  { border-color: #f59e0b; }
+    .folio-card[data-accent="blue"]:hover   { border-color: #3b82f6; }
+    .folio-card[data-accent="green"]:hover  { border-color: #10b981; }
+    .folio-card[data-accent="violet"]:hover { border-color: #8b5cf6; }
 
-    .folio-card[data-accent="amber"] .folio-accent  { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
-    .folio-card[data-accent="blue"]  .folio-accent  { background: linear-gradient(90deg, #2563eb, #60a5fa); }
-    .folio-card[data-accent="green"] .folio-accent  { background: linear-gradient(90deg, #059669, #34d399); }
-    .folio-card[data-accent="violet"] .folio-accent { background: linear-gradient(90deg, #7c3aed, #a78bfa); }
-
-    .folio-card[data-accent="amber"]:hover  .folio-card-inner { border-color: rgba(245,158,11,0.45);  box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(245,158,11,0.35); }
-    .folio-card[data-accent="blue"]:hover   .folio-card-inner { border-color: rgba(37,99,235,0.45);   box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(37,99,235,0.35); }
-    .folio-card[data-accent="green"]:hover  .folio-card-inner { border-color: rgba(5,150,105,0.45);   box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(5,150,105,0.35); }
-    .folio-card[data-accent="violet"]:hover .folio-card-inner { border-color: rgba(124,58,237,0.45);  box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(124,58,237,0.35); }
-
-    .folio-meta {
+    /* Browser chrome bar */
+    .browser-chrome {
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      position: relative;
-      z-index: 1;
+      background: #161b22;
+      padding: 0.55rem 0.9rem;
+      border-bottom: 1px solid #1f2937;
     }
 
-    .folio-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
+    .browser-dots {
+      display: flex;
+      gap: 0.35rem;
       flex-shrink: 0;
     }
 
-    .folio-card[data-accent="amber"]  .folio-dot { background: #f59e0b; }
-    .folio-card[data-accent="blue"]   .folio-dot { background: #3b82f6; }
-    .folio-card[data-accent="green"]  .folio-dot { background: #10b981; }
-    .folio-card[data-accent="violet"] .folio-dot { background: #8b5cf6; }
-
-    .folio-domain {
-      font-size: 0.78rem;
-      color: #6b7280;
-      letter-spacing: 0.04em;
-      font-family: monospace;
+    .browser-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
     }
 
-    .folio-card-body {
+    .browser-dot-red    { background: #ff5f57; }
+    .browser-dot-yellow { background: #febc2e; }
+    .browser-dot-green  { background: #28c840; }
+
+    .browser-bar {
       flex: 1;
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 4px;
+      padding: 0.18rem 0.65rem;
+      font-size: 0.72rem;
+      color: #8b949e;
+      font-family: ui-monospace, monospace;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Iframe viewport */
+    .browser-viewport {
       position: relative;
-      z-index: 1;
+      overflow: hidden;
+      background: #fff;
+      /* height set by JS */
+    }
+
+    .browser-viewport iframe {
+      display: block;
+      border: none;
+      pointer-events: none;
+      transform-origin: top left;
+      /* width / height / transform set by JS */
+    }
+
+    .browser-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    /* Card footer */
+    .folio-foot {
+      padding: 1.1rem 1.4rem 1.3rem;
+      border-top: 1px solid #1f2937;
+    }
+
+    .folio-foot-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.35rem;
     }
 
     .folio-name {
-      font-size: 1.5rem;
+      font-size: 1rem;
       font-weight: 700;
       color: #fff;
-      margin: 0 0 0.5rem;
-      line-height: 1.2;
-    }
-
-    .folio-tagline {
-      font-size: 0.95rem;
-      color: #9ca3af;
-      line-height: 1.5;
       margin: 0;
     }
 
-    .folio-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .folio-tags span {
-      font-size: 0.72rem;
-      padding: 0.25rem 0.6rem;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid #374151;
-      border-radius: 999px;
-      color: #9ca3af;
-    }
-
     .folio-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 600;
       text-decoration: none;
-      transition: gap 0.15s ease, opacity 0.15s ease;
-      position: relative;
-      z-index: 3;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: opacity 0.15s;
     }
+
+    .folio-link:hover { opacity: 0.7; }
 
     .folio-card[data-accent="amber"]  .folio-link { color: #fbbf24; }
     .folio-card[data-accent="blue"]   .folio-link { color: #60a5fa; }
     .folio-card[data-accent="green"]  .folio-link { color: #34d399; }
     .folio-card[data-accent="violet"] .folio-link { color: #a78bfa; }
 
-    .folio-link:hover { gap: 0.55rem; opacity: 0.85; }
+    .folio-tagline {
+      font-size: 0.83rem;
+      color: #9ca3af;
+      margin: 0 0 0.65rem;
+      line-height: 1.45;
+    }
+
+    .folio-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .folio-tags span {
+      font-size: 0.7rem;
+      padding: 0.18rem 0.5rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid #30363d;
+      border-radius: 999px;
+      color: #8b949e;
+    }
 
     /* ── Feature grid (6 items) ─────────────────────────────────── */
     .features-6 {
@@ -418,89 +423,121 @@
 
           <!-- Prestige Cabinet -->
           <div class="folio-card" data-accent="amber">
-            <div class="folio-card-inner">
-              <div class="folio-accent"></div>
-              <div class="folio-shine"></div>
-              <div class="folio-meta">
-                <span class="folio-dot"></span>
-                <span class="folio-domain">prestige-cabinet.com</span>
+            <div class="browser-chrome">
+              <div class="browser-dots">
+                <span class="browser-dot browser-dot-red"></span>
+                <span class="browser-dot browser-dot-yellow"></span>
+                <span class="browser-dot browser-dot-green"></span>
               </div>
-              <div class="folio-card-body">
+              <div class="browser-bar">https://prestige-cabinet.com</div>
+            </div>
+            <div class="browser-viewport">
+              <iframe src="https://prestige-cabinet.com" title="Prestige Cabinet website preview"
+                loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+              <a href="https://prestige-cabinet.com" target="_blank" rel="noopener noreferrer"
+                class="browser-overlay" aria-label="Open prestige-cabinet.com"></a>
+            </div>
+            <div class="folio-foot">
+              <div class="folio-foot-head">
                 <h3 class="folio-name">Prestige Cabinet</h3>
-                <p class="folio-tagline">Premium custom cabinetry and kitchen design. A polished, fast-loading
-                  showcase site that converts visitors into consultation bookings — without a CMS in sight.</p>
+                <a href="https://prestige-cabinet.com" target="_blank" rel="noopener noreferrer"
+                  class="folio-link">Visit site →</a>
               </div>
+              <p class="folio-tagline">Premium custom cabinetry and kitchen design — built fast, secure, and
+                fully AI-authored without a CMS.</p>
               <div class="folio-tags">
                 <span>Static HTML</span><span>GitHub Pages</span><span>HubSpot Forms</span>
               </div>
-              <a href="https://prestige-cabinet.com" target="_blank" rel="noopener noreferrer"
-                class="folio-link">Visit site →</a>
             </div>
           </div>
 
           <!-- Crewa -->
           <div class="folio-card" data-accent="blue">
-            <div class="folio-card-inner">
-              <div class="folio-accent"></div>
-              <div class="folio-shine"></div>
-              <div class="folio-meta">
-                <span class="folio-dot"></span>
-                <span class="folio-domain">crewa.app</span>
+            <div class="browser-chrome">
+              <div class="browser-dots">
+                <span class="browser-dot browser-dot-red"></span>
+                <span class="browser-dot browser-dot-yellow"></span>
+                <span class="browser-dot browser-dot-green"></span>
               </div>
-              <div class="folio-card-body">
+              <div class="browser-bar">https://crewa.app</div>
+            </div>
+            <div class="browser-viewport">
+              <iframe src="https://crewa.app" title="Crewa website preview"
+                loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+              <a href="https://crewa.app" target="_blank" rel="noopener noreferrer"
+                class="browser-overlay" aria-label="Open crewa.app"></a>
+            </div>
+            <div class="folio-foot">
+              <div class="folio-foot-head">
                 <h3 class="folio-name">Crewa</h3>
-                <p class="folio-tagline">Find your running crew in Toronto. A marketing and app-store landing
-                  page for the React Native mobile app — built static for maximum speed and SEO visibility.</p>
+                <a href="https://crewa.app" target="_blank" rel="noopener noreferrer"
+                  class="folio-link">Visit site →</a>
               </div>
+              <p class="folio-tagline">Find your running crew in Toronto — marketing landing page for the
+                mobile app, built static for maximum speed and SEO.</p>
               <div class="folio-tags">
                 <span>Static HTML</span><span>Cloudflare Pages</span><span>App Store Links</span>
               </div>
-              <a href="https://crewa.app" target="_blank" rel="noopener noreferrer"
-                class="folio-link">Visit site →</a>
             </div>
           </div>
 
           <!-- TotsBuds -->
           <div class="folio-card" data-accent="green">
-            <div class="folio-card-inner">
-              <div class="folio-accent"></div>
-              <div class="folio-shine"></div>
-              <div class="folio-meta">
-                <span class="folio-dot"></span>
-                <span class="folio-domain">totsbuds.com</span>
+            <div class="browser-chrome">
+              <div class="browser-dots">
+                <span class="browser-dot browser-dot-red"></span>
+                <span class="browser-dot browser-dot-yellow"></span>
+                <span class="browser-dot browser-dot-green"></span>
               </div>
-              <div class="folio-card-body">
+              <div class="browser-bar">https://totsbuds.com</div>
+            </div>
+            <div class="browser-viewport">
+              <iframe src="https://totsbuds.com" title="TotsBuds website preview"
+                loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+              <a href="https://totsbuds.com" target="_blank" rel="noopener noreferrer"
+                class="browser-overlay" aria-label="Open totsbuds.com"></a>
+            </div>
+            <div class="folio-foot">
+              <div class="folio-foot-head">
                 <h3 class="folio-name">TotsBuds</h3>
-                <p class="folio-tagline">Your friendly companion for helping children grow and thrive. A warm,
-                  accessible landing page for parents and educators — zero server, 100% private and safe.</p>
+                <a href="https://totsbuds.com" target="_blank" rel="noopener noreferrer"
+                  class="folio-link">Visit site →</a>
               </div>
+              <p class="folio-tagline">A warm, accessible landing page for parents and educators — zero server,
+                AI-built, 100% private and safe for children.</p>
               <div class="folio-tags">
                 <span>Static HTML</span><span>Cloudflare Pages</span><span>App Store Links</span>
               </div>
-              <a href="https://totsbuds.com" target="_blank" rel="noopener noreferrer"
-                class="folio-link">Visit site →</a>
             </div>
           </div>
 
           <!-- Stylish Cabinets -->
           <div class="folio-card" data-accent="violet">
-            <div class="folio-card-inner">
-              <div class="folio-accent"></div>
-              <div class="folio-shine"></div>
-              <div class="folio-meta">
-                <span class="folio-dot"></span>
-                <span class="folio-domain">stylish-cabinets.com</span>
+            <div class="browser-chrome">
+              <div class="browser-dots">
+                <span class="browser-dot browser-dot-red"></span>
+                <span class="browser-dot browser-dot-yellow"></span>
+                <span class="browser-dot browser-dot-green"></span>
               </div>
-              <div class="folio-card-body">
+              <div class="browser-bar">https://stylish-cabinets.com</div>
+            </div>
+            <div class="browser-viewport">
+              <iframe src="https://stylish-cabinets.com" title="Stylish Cabinets website preview"
+                loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+              <a href="https://stylish-cabinets.com" target="_blank" rel="noopener noreferrer"
+                class="browser-overlay" aria-label="Open stylish-cabinets.com"></a>
+            </div>
+            <div class="folio-foot">
+              <div class="folio-foot-head">
                 <h3 class="folio-name">Stylish Cabinets</h3>
-                <p class="folio-tagline">Modern cabinet design and installation. A clean, image-forward site
-                  that loads instantly on any device and drives inbound leads via embedded contact forms.</p>
+                <a href="https://stylish-cabinets.com" target="_blank" rel="noopener noreferrer"
+                  class="folio-link">Visit site →</a>
               </div>
+              <p class="folio-tagline">Modern cabinet design and installation — image-forward, loads instantly
+                on any device, with embedded lead capture forms.</p>
               <div class="folio-tags">
                 <span>Static HTML</span><span>GitHub Pages</span><span>Typeform Embed</span>
               </div>
-              <a href="https://stylish-cabinets.com" target="_blank" rel="noopener noreferrer"
-                class="folio-link">Visit site →</a>
             </div>
           </div>
 
@@ -615,40 +652,27 @@
   <script src="script.js"></script>
 
   <script>
-    // ── Portfolio 3-D tilt ──────────────────────────────────────────────────
+    // ── Scale iframe previews to fit their containers ─────────────────────
     (function () {
-      var cards = document.querySelectorAll('.folio-card');
+      var IFRAME_W = 1440;
+      var IFRAME_H = 900;
 
-      cards.forEach(function (card) {
-        var inner = card.querySelector('.folio-card-inner');
-        var shine = card.querySelector('.folio-shine');
-
-        card.addEventListener('mousemove', function (e) {
-          var rect = card.getBoundingClientRect();
-          var x = e.clientX - rect.left;
-          var y = e.clientY - rect.top;
-          var cx = rect.width / 2;
-          var cy = rect.height / 2;
-
-          var rx = ((y - cy) / cy) * -10;
-          var ry = ((x - cx) / cx) * 10;
-
-          inner.style.transform =
-            'perspective(900px) rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg) scale3d(1.04,1.04,1.04)';
-
-          var sx = ((x / rect.width) * 100).toFixed(1);
-          var sy = ((y / rect.height) * 100).toFixed(1);
-          shine.style.opacity = '1';
-          shine.style.backgroundImage =
-            'radial-gradient(circle at ' + sx + '% ' + sy + '%, rgba(255,255,255,0.14) 0%, transparent 65%)';
+      function scalePreviews() {
+        document.querySelectorAll('.browser-viewport').forEach(function (vp) {
+          var iframe = vp.querySelector('iframe');
+          if (!iframe) return;
+          var w = vp.offsetWidth;
+          var scale = w / IFRAME_W;
+          var h = Math.round(IFRAME_H * scale);
+          iframe.style.width  = IFRAME_W + 'px';
+          iframe.style.height = IFRAME_H + 'px';
+          iframe.style.transform = 'scale(' + scale + ')';
+          vp.style.height = h + 'px';
         });
+      }
 
-        card.addEventListener('mouseleave', function () {
-          inner.style.transform =
-            'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
-          shine.style.opacity = '0';
-        });
-      });
+      scalePreviews();
+      window.addEventListener('resize', scalePreviews);
     })();
 
     // ── Theme toggle ──────────────────────────────────────────────────────
