@@ -258,6 +258,16 @@
 </head>
 
 <body>
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-bolt" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></symbol>
+      <symbol id="i-lock-closed" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 7.714L18 8.25l-.259-.536a2.25 2.25 0 00-1.154-1.154L16.25 6l.536-.259a2.25 2.25 0 001.154-1.154L18 3.75l.259.536a2.25 2.25 0 001.154 1.154L19.75 6l-.536.259a2.25 2.25 0 00-1.154 1.154z"/></symbol>
+      <symbol id="i-rocket" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214H8.574a2.25 2.25 0 00-2.25 2.25v7.874a2.25 2.25 0 002.25 2.25h3.919m6.504-1.228L21 21l-3.228-1.228a48.09 48.09 0 00-5.714-1.75m0 0a48.09 48.09 0 01-5.714-1.75L3 21l1.228-3.228a48.09 48.09 0 001.75-5.714m0 0a48.09 48.09 0 011.75-5.714L21 3l-1.228 3.228a48.09 48.09 0 00-1.75 5.714"/></symbol>
+      <symbol id="i-archive" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></symbol>
+      <symbol id="i-link" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.621l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/></symbol>
+    </defs>
+  </svg>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG24GTB4" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
@@ -325,7 +335,7 @@
         </div>
         <div class="features-6">
           <div class="capability-item">
-            <div class="capability-icon">⚡</div>
+            <div class="capability-icon"><svg class="hi-ico" width="24" height="24" aria-hidden="true"><use href="#i-bolt"/></svg></div>
             <div>
               <h3>Instant page loads</h3>
               <p>Pre-built HTML served from a CDN edge — no PHP, no database query, no template render on every
@@ -333,14 +343,14 @@
             </div>
           </div>
           <div class="capability-item">
-            <div class="capability-icon">🔒</div>
+            <div class="capability-icon"><svg class="hi-ico" width="24" height="24" aria-hidden="true"><use href="#i-lock-closed"/></svg></div>
             <div>
               <h3>No attack surface</h3>
               <p>No login panel, no database connection, no server executing code. Nothing to breach.</p>
             </div>
           </div>
           <div class="capability-item">
-            <div class="capability-icon">🤖</div>
+            <div class="capability-icon"><svg class="hi-ico" width="24" height="24" aria-hidden="true"><use href="#i-sparkles"/></svg></div>
             <div>
               <h3>AI-editable forever</h3>
               <p>Describe a change in plain English — Claude reads the codebase and writes exactly what's needed,
@@ -348,7 +358,7 @@
             </div>
           </div>
           <div class="capability-item">
-            <div class="capability-icon">🚀</div>
+            <div class="capability-icon"><svg class="hi-ico" width="24" height="24" aria-hidden="true"><use href="#i-rocket"/></svg></div>
             <div>
               <h3>Auto-deploy pipeline</h3>
               <p>Every push to GitHub triggers a deployment. Your change is live in seconds, globally cached,
@@ -356,7 +366,7 @@
             </div>
           </div>
           <div class="capability-item">
-            <div class="capability-icon">📜</div>
+            <div class="capability-icon"><svg class="hi-ico" width="24" height="24" aria-hidden="true"><use href="#i-archive"/></svg></div>
             <div>
               <h3>Full version history</h3>
               <p>Git is your CMS. Every change is tracked, every version is recoverable, and every collaborator
@@ -364,7 +374,7 @@
             </div>
           </div>
           <div class="capability-item">
-            <div class="capability-icon">🔌</div>
+            <div class="capability-icon"><svg class="hi-ico" width="24" height="24" aria-hidden="true"><use href="#i-link"/></svg></div>
             <div>
               <h3>Best-in-class integrations</h3>
               <p>Forms via HubSpot or Typeform. Chat via Intercom. Bookings via Calendly. Payments via Stripe.
