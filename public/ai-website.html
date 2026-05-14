@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Powered Website Development | k1m.dev</title>
+  <meta name="description"
+    content="Get a blazing-fast, secure website built with plain HTML and AI — no CMS, no server, auto-deployed on every push. See live portfolio examples and book a call." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://k1m.dev/ai-website.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="k1m.dev" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="AI-Powered Website Development | k1m.dev" />
+  <meta property="og:description"
+    content="Blazing-fast static sites built with AI. No CMS, no server, auto-deployed — perfect Core Web Vitals out of the box." />
+  <meta property="og:image" content="https://k1m.dev/images/k1m.webp" />
+  <meta property="og:url" content="https://k1m.dev/ai-website.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI-Powered Website Development | k1m.dev" />
+  <meta name="twitter:description"
+    content="Blazing-fast static sites built with AI. No CMS, no server, auto-deployed — perfect Core Web Vitals out of the box." />
+  <meta name="twitter:image" content="https://k1m.dev/images/k1m.webp" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/favicon.svg" />
+  <script src="/cookie-consent-init.min.js"></script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MG24GTB4');</script>
+  <!-- End Google Tag Manager -->
+  <link rel="stylesheet" href="/cookie-consent.min.css" />
+
+  <style>
+    /* ── Portfolio tilt cards ───────────────────────────────────── */
+    .folio-section {
+      padding: 5rem 0;
+      background: transparent;
+    }
+
+    .folio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    /* Outer wrapper preserves layout space; inner wrapper gets transformed */
+    .folio-card {
+      perspective: 900px;
+      cursor: pointer;
+    }
+
+    .folio-card-inner {
+      position: relative;
+      border-radius: 1rem;
+      overflow: hidden;
+      background: rgba(17, 24, 39, 0.7);
+      border: 1px solid #1f2937;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      min-height: 320px;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.2s ease;
+      will-change: transform;
+      transform-style: preserve-3d;
+    }
+
+    .folio-card:hover .folio-card-inner {
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(139, 92, 246, 0.35);
+      border-color: rgba(139, 92, 246, 0.45);
+    }
+
+    /* Glare overlay */
+    .folio-shine {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: inherit;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      z-index: 2;
+    }
+
+    /* Accent bar at top of each card */
+    .folio-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      border-radius: 1rem 1rem 0 0;
+    }
+
+    .folio-card[data-accent="amber"] .folio-accent  { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+    .folio-card[data-accent="blue"]  .folio-accent  { background: linear-gradient(90deg, #2563eb, #60a5fa); }
+    .folio-card[data-accent="green"] .folio-accent  { background: linear-gradient(90deg, #059669, #34d399); }
+    .folio-card[data-accent="violet"] .folio-accent { background: linear-gradient(90deg, #7c3aed, #a78bfa); }
+
+    .folio-card[data-accent="amber"]:hover  .folio-card-inner { border-color: rgba(245,158,11,0.45);  box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(245,158,11,0.35); }
+    .folio-card[data-accent="blue"]:hover   .folio-card-inner { border-color: rgba(37,99,235,0.45);   box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(37,99,235,0.35); }
+    .folio-card[data-accent="green"]:hover  .folio-card-inner { border-color: rgba(5,150,105,0.45);   box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(5,150,105,0.35); }
+    .folio-card[data-accent="violet"]:hover .folio-card-inner { border-color: rgba(124,58,237,0.45);  box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(124,58,237,0.35); }
+
+    .folio-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .folio-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .folio-card[data-accent="amber"]  .folio-dot { background: #f59e0b; }
+    .folio-card[data-accent="blue"]   .folio-dot { background: #3b82f6; }
+    .folio-card[data-accent="green"]  .folio-dot { background: #10b981; }
+    .folio-card[data-accent="violet"] .folio-dot { background: #8b5cf6; }
+
+    .folio-domain {
+      font-size: 0.78rem;
+      color: #6b7280;
+      letter-spacing: 0.04em;
+      font-family: monospace;
+    }
+
+    .folio-card-body {
+      flex: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    .folio-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 0.5rem;
+      line-height: 1.2;
+    }
+
+    .folio-tagline {
+      font-size: 0.95rem;
+      color: #9ca3af;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .folio-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .folio-tags span {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.6rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #374151;
+      border-radius: 999px;
+      color: #9ca3af;
+    }
+
+    .folio-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: gap 0.15s ease, opacity 0.15s ease;
+      position: relative;
+      z-index: 3;
+    }
+
+    .folio-card[data-accent="amber"]  .folio-link { color: #fbbf24; }
+    .folio-card[data-accent="blue"]   .folio-link { color: #60a5fa; }
+    .folio-card[data-accent="green"]  .folio-link { color: #34d399; }
+    .folio-card[data-accent="violet"] .folio-link { color: #a78bfa; }
+
+    .folio-link:hover { gap: 0.55rem; opacity: 0.85; }
+
+    /* ── Feature grid (6 items) ─────────────────────────────────── */
+    .features-6 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* ── Article callout ────────────────────────────────────────── */
+    .article-callout {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      background: rgba(17,24,39,0.6);
+      border: 1px solid #1f2937;
+      border-left: 3px solid #7c3aed;
+      border-radius: 0.75rem;
+      padding: 1.5rem 1.75rem;
+      max-width: 42rem;
+      margin: 0 auto;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .article-callout:hover {
+      border-color: rgba(139,92,246,0.5);
+      background: rgba(139,92,246,0.07);
+    }
+
+    .article-callout-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .article-callout-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #a78bfa;
+      margin-bottom: 0.3rem;
+    }
+
+    .article-callout-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 0.3rem;
+    }
+
+    .article-callout-desc {
+      font-size: 0.875rem;
+      color: #9ca3af;
+      margin: 0;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG24GTB4" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="site-header">
+    <a href="/" class="nav-logo"><img src="/favicon.svg" alt="k1m.dev" width="40" height="40" /></a>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav class="nav-top" id="nav-menu" aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/tech-engineer.html">Tech Engineer</a>
+      <a href="/ai-website.html" aria-current="page">AI Website</a>
+      <a href="/blog/">Blog</a>
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">
+        <span class="theme-icon sun">☀</span>
+        <span class="theme-icon moon">☽</span>
+      </button>
+    </nav>
+    <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero hero-full">
+      <div class="hero-bg"></div>
+      <div class="container hero-inner">
+        <div class="hero-badge">AI Website · Static · Fast · Zero CMS</div>
+        <h1>Your website, built with AI.<br />Live in days, not months.</h1>
+        <p class="subtitle">Plain HTML. GitHub repo. Auto-deployed on every push. I write the code with AI, you get
+          a site that loads in milliseconds, scores 100 on Core Web Vitals, and never gets hacked through a plugin
+          vulnerability.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn">Get Your Site Built →</a>
+          <a href="#portfolio" class="btn btn-secondary">See Live Examples</a>
+        </div>
+        <div class="stats-row">
+          <div class="stat-card">
+            <span class="stat-num">100</span>
+            <span class="stat-label">Core Web Vitals</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">&lt;1s</span>
+            <span class="stat-label">Time to First Byte</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">$0</span>
+            <span class="stat-label">Hosting Cost</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What you get -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Everything a business website needs</h2>
+          <p class="section-intro">No bloat, no moving parts to break. Just a fast, secure, beautiful site
+            that you can update by describing a change in plain English.</p>
+        </div>
+        <div class="features-6">
+          <div class="capability-item">
+            <div class="capability-icon">⚡</div>
+            <div>
+              <h3>Instant page loads</h3>
+              <p>Pre-built HTML served from a CDN edge — no PHP, no database query, no template render on every
+                request.</p>
+            </div>
+          </div>
+          <div class="capability-item">
+            <div class="capability-icon">🔒</div>
+            <div>
+              <h3>No attack surface</h3>
+              <p>No login panel, no database connection, no server executing code. Nothing to breach.</p>
+            </div>
+          </div>
+          <div class="capability-item">
+            <div class="capability-icon">🤖</div>
+            <div>
+              <h3>AI-editable forever</h3>
+              <p>Describe a change in plain English — Claude reads the codebase and writes exactly what's needed,
+                matching your design language every time.</p>
+            </div>
+          </div>
+          <div class="capability-item">
+            <div class="capability-icon">🚀</div>
+            <div>
+              <h3>Auto-deploy pipeline</h3>
+              <p>Every push to GitHub triggers a deployment. Your change is live in seconds, globally cached,
+                zero manual steps.</p>
+            </div>
+          </div>
+          <div class="capability-item">
+            <div class="capability-icon">📜</div>
+            <div>
+              <h3>Full version history</h3>
+              <p>Git is your CMS. Every change is tracked, every version is recoverable, and every collaborator
+                has a clear audit trail.</p>
+            </div>
+          </div>
+          <div class="capability-item">
+            <div class="capability-icon">🔌</div>
+            <div>
+              <h3>Best-in-class integrations</h3>
+              <p>Forms via HubSpot or Typeform. Chat via Intercom. Bookings via Calendly. Payments via Stripe.
+                All drop-in JavaScript — no backend needed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">How it works</h2>
+          <p class="section-intro">From brief to live site — a transparent, fast process with no surprises.</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-num">01</span>
+            <h3>Discovery &amp; Design</h3>
+            <p>We define your goals, target audience, and page structure. I produce a design direction that
+              matches your brand, or we start from an existing design in Figma.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">02</span>
+            <h3>AI builds the site</h3>
+            <p>Claude writes clean, semantic HTML/CSS/JS — section by section. You review and approve as we go.
+              Every component is consistent, accessible, and SEO-ready.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">03</span>
+            <h3>Deploy &amp; connect</h3>
+            <p>The repo is pushed to GitHub, a GitHub Actions pipeline is wired up, and the site goes live on
+              GitHub Pages or Cloudflare Pages in minutes.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">04</span>
+            <h3>Iterate forever</h3>
+            <p>Need a new page, updated copy, or a redesigned section? Describe it. AI writes it. We review,
+              commit, push. Your site evolves without a dev ticket queue.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="section section-alt folio-section" id="portfolio">
+      <div class="container-wide">
+        <div class="section-header">
+          <h2 class="section-title">Sites built this way</h2>
+          <p class="section-intro">Real businesses running on the AI-powered static stack — fast, secure, and
+            updated with AI whenever something needs to change.</p>
+        </div>
+        <div class="folio-grid">
+
+          <!-- Prestige Cabinet -->
+          <div class="folio-card" data-accent="amber">
+            <div class="folio-card-inner">
+              <div class="folio-accent"></div>
+              <div class="folio-shine"></div>
+              <div class="folio-meta">
+                <span class="folio-dot"></span>
+                <span class="folio-domain">prestige-cabinet.com</span>
+              </div>
+              <div class="folio-card-body">
+                <h3 class="folio-name">Prestige Cabinet</h3>
+                <p class="folio-tagline">Premium custom cabinetry and kitchen design. A polished, fast-loading
+                  showcase site that converts visitors into consultation bookings — without a CMS in sight.</p>
+              </div>
+              <div class="folio-tags">
+                <span>Static HTML</span><span>GitHub Pages</span><span>HubSpot Forms</span>
+              </div>
+              <a href="https://prestige-cabinet.com" target="_blank" rel="noopener noreferrer"
+                class="folio-link">Visit site →</a>
+            </div>
+          </div>
+
+          <!-- Crewa -->
+          <div class="folio-card" data-accent="blue">
+            <div class="folio-card-inner">
+              <div class="folio-accent"></div>
+              <div class="folio-shine"></div>
+              <div class="folio-meta">
+                <span class="folio-dot"></span>
+                <span class="folio-domain">crewa.app</span>
+              </div>
+              <div class="folio-card-body">
+                <h3 class="folio-name">Crewa</h3>
+                <p class="folio-tagline">Find your running crew in Toronto. A marketing and app-store landing
+                  page for the React Native mobile app — built static for maximum speed and SEO visibility.</p>
+              </div>
+              <div class="folio-tags">
+                <span>Static HTML</span><span>Cloudflare Pages</span><span>App Store Links</span>
+              </div>
+              <a href="https://crewa.app" target="_blank" rel="noopener noreferrer"
+                class="folio-link">Visit site →</a>
+            </div>
+          </div>
+
+          <!-- TotsBuds -->
+          <div class="folio-card" data-accent="green">
+            <div class="folio-card-inner">
+              <div class="folio-accent"></div>
+              <div class="folio-shine"></div>
+              <div class="folio-meta">
+                <span class="folio-dot"></span>
+                <span class="folio-domain">totsbuds.com</span>
+              </div>
+              <div class="folio-card-body">
+                <h3 class="folio-name">TotsBuds</h3>
+                <p class="folio-tagline">Your friendly companion for helping children grow and thrive. A warm,
+                  accessible landing page for parents and educators — zero server, 100% private and safe.</p>
+              </div>
+              <div class="folio-tags">
+                <span>Static HTML</span><span>Cloudflare Pages</span><span>App Store Links</span>
+              </div>
+              <a href="https://totsbuds.com" target="_blank" rel="noopener noreferrer"
+                class="folio-link">Visit site →</a>
+            </div>
+          </div>
+
+          <!-- Stylish Cabinets -->
+          <div class="folio-card" data-accent="violet">
+            <div class="folio-card-inner">
+              <div class="folio-accent"></div>
+              <div class="folio-shine"></div>
+              <div class="folio-meta">
+                <span class="folio-dot"></span>
+                <span class="folio-domain">stylish-cabinets.com</span>
+              </div>
+              <div class="folio-card-body">
+                <h3 class="folio-name">Stylish Cabinets</h3>
+                <p class="folio-tagline">Modern cabinet design and installation. A clean, image-forward site
+                  that loads instantly on any device and drives inbound leads via embedded contact forms.</p>
+              </div>
+              <div class="folio-tags">
+                <span>Static HTML</span><span>GitHub Pages</span><span>Typeform Embed</span>
+              </div>
+              <a href="https://stylish-cabinets.com" target="_blank" rel="noopener noreferrer"
+                class="folio-link">Visit site →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Article callout -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 2rem;">
+          <h2 class="section-title">Want the full picture?</h2>
+          <p class="section-intro">Read the deep-dive on how the AI-powered static stack actually works — the
+            performance numbers, the trade-offs, and what you give up.</p>
+        </div>
+        <a href="/blog/The-AI-Powered-Static-Site-Speed-Code-and-No-CMS.html" class="article-callout">
+          <div class="article-callout-icon">📄</div>
+          <div>
+            <div class="article-callout-label">Blog Article</div>
+            <div class="article-callout-title">The AI-Powered Static Site: Speed, Code, and No CMS</div>
+            <p class="article-callout-desc">How teams are building fast, secure websites with plain HTML, Claude,
+              and GitHub Pages — and why it beats CMS on every axis that matters.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <section class="cta-section">
+          <h2>Ready to ditch the CMS?<br />Let's build your site.</h2>
+          <p>Tell me what you need. I'll scope it, build it with AI, and have it live faster than you'd expect.</p>
+          <div class="cta-links">
+            <a href="https://meetings-na3.hubspot.com/keyvan?uuid=7f6105be-cff2-4f01-92b9-739ed12ff266"
+              target="_blank" rel="noopener noreferrer" class="btn" id="cta-button">Book a Call →</a>
+          </div>
+          <div class="contact-options">
+            <a href="mailto:hi@k1m.dev" class="contact-link">
+              <span class="contact-icon">✉</span>
+              <span>hi@k1m.dev</span>
+            </a>
+            <a href="https://linkedin.com/in/keyvan-montazeri" target="_blank" rel="noopener noreferrer"
+              class="contact-link">
+              <span class="contact-icon">in</span>
+              <span>LinkedIn Profile</span>
+            </a>
+          </div>
+        </section>
+
+        <div class="author-card" style="max-width: 42rem; margin: 2rem auto 0;">
+          <img src="https://k1m.dev/images/k1m.webp" alt="Keyvan Montazeri" />
+          <div>
+            <div class="name">Keyvan Montazeri</div>
+            <div class="role">Startup MVP Engineer - Solutions Architect</div>
+            <p class="bio">18+ years building MVPs and solving hard tech problems for startups. I help founders
+              move fast and ship products that matter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">k1m.dev</div>
+        <div class="footer-copy">Startup MVP Engineer</div>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/goolz" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+        <a href="https://linkedin.com/in/keyvan-montazeri" target="_blank" rel="noopener noreferrer"
+          aria-label="LinkedIn">LinkedIn</a>
+        <a href="mailto:hi@k1m.dev" aria-label="Email">Email</a>
+      </div>
+    </div>
+    <div class="footer-copy footer-copyright">© 2026 k1m.dev. All rights reserved.</div>
+  </footer>
+
+  <dialog
+    class="cookie-consent-dialog"
+    id="cookie-consent-dialog"
+    aria-labelledby="cookie-consent-title"
+    aria-describedby="cookie-consent-desc">
+    <div class="cookie-consent-shell">
+      <div class="cookie-consent-grid">
+        <div class="cookie-consent-copy">
+          <div class="cookie-consent-badge">Privacy · Cookies</div>
+          <h2 class="cookie-consent-title" id="cookie-consent-title">Cookies &amp; analytics</h2>
+          <p class="cookie-consent-body" id="cookie-consent-desc">
+            We use cookies and similar technologies for site functionality, analytics, and tags loaded through Google Tag Manager. Accept optional cookies, or decline non-essential use. This notice is not legal advice—read our Privacy page and align with applicable laws.
+          </p>
+          <p class="cookie-consent-ca">
+            If you are in California or another U.S. state with consumer privacy laws, you may have additional choices; see our Privacy notice.
+          </p>
+        </div>
+        <div class="cookie-consent-aside">
+          <div class="cookie-consent-actions">
+            <button type="button" class="cookie-consent-btn-decline" id="cookie-consent-decline">
+              Decline optional cookies
+            </button>
+            <button type="button" class="cookie-consent-btn-accept" id="cookie-consent-accept">Accept</button>
+          </div>
+          <p class="cookie-consent-links"><a href="/privacy.html">Privacy</a></p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="/cookie-consent-ui.min.js" defer></script>
+  <script src="script.js"></script>
+
+  <script>
+    // ── Portfolio 3-D tilt ──────────────────────────────────────────────────
+    (function () {
+      var cards = document.querySelectorAll('.folio-card');
+
+      cards.forEach(function (card) {
+        var inner = card.querySelector('.folio-card-inner');
+        var shine = card.querySelector('.folio-shine');
+
+        card.addEventListener('mousemove', function (e) {
+          var rect = card.getBoundingClientRect();
+          var x = e.clientX - rect.left;
+          var y = e.clientY - rect.top;
+          var cx = rect.width / 2;
+          var cy = rect.height / 2;
+
+          var rx = ((y - cy) / cy) * -10;
+          var ry = ((x - cx) / cx) * 10;
+
+          inner.style.transform =
+            'perspective(900px) rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg) scale3d(1.04,1.04,1.04)';
+
+          var sx = ((x / rect.width) * 100).toFixed(1);
+          var sy = ((y / rect.height) * 100).toFixed(1);
+          shine.style.opacity = '1';
+          shine.style.backgroundImage =
+            'radial-gradient(circle at ' + sx + '% ' + sy + '%, rgba(255,255,255,0.14) 0%, transparent 65%)';
+        });
+
+        card.addEventListener('mouseleave', function () {
+          inner.style.transform =
+            'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+          shine.style.opacity = '0';
+        });
+      });
+    })();
+
+    // ── Theme toggle ──────────────────────────────────────────────────────
+    (function () {
+      var btn = document.getElementById('theme-toggle');
+      var html = document.documentElement;
+      var saved = localStorage.getItem('theme');
+      var isDark = saved !== 'light';
+
+      function apply() {
+        if (isDark) {
+          html.classList.add('dark');
+          html.classList.remove('light');
+        } else {
+          html.classList.remove('dark');
+          html.classList.add('light');
+        }
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      }
+
+      if (saved === 'light') isDark = false;
+      apply();
+
+      if (btn) {
+        btn.addEventListener('click', function () {
+          isDark = !isDark;
+          apply();
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>
